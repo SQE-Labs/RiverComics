@@ -1,0 +1,136 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 11, Errors: 0, Skipped: 0, Time elapsed: 67.269 s <<< FAILURE! - in TestSuite
+testClasses.LoginTest.launchApp_already_LoggedIn_User  Time elapsed: 2.067 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.LoginTest.launchApp_already_LoggedIn_User(LoginTest.java:39)
+
+testClasses.LoginTest.userName_Field_Blank  Time elapsed: 2.029 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etPassword}
+	at testClasses.LoginTest.userName_Field_Blank(LoginTest.java:56)
+
+testClasses.LoginTest.password_Field_Blank  Time elapsed: 2.039 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.LoginTest.password_Field_Blank(LoginTest.java:66)
+
+testClasses.LoginTest.invalid_Username_Login  Time elapsed: 2.031 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.LoginTest.invalid_Username_Login(LoginTest.java:76)
+
+testClasses.LoginTest.invalid_Password_Login  Time elapsed: 2.144 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.LoginTest.invalid_Password_Login(LoginTest.java:86)
+
+testClasses.UnsubscribedUserTest.UnsubscribedUser  Time elapsed: 2.032 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.UnsubscribedUserTest.UnsubscribedUser(UnsubscribedUserTest.java:21)
+
+testClasses.LoginTest.decrypted_Password  Time elapsed: 2.052 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.LoginTest.decrypted_Password(LoginTest.java:96)
+
+testClasses.SubscribedUserTest.subscribedUser  Time elapsed: 2.105 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.SubscribedUserTest.subscribedUser(SubscribedUserTest.java:20)
+
+testClasses.LoginTest.encrypted_Password  Time elapsed: 2.061 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.LoginTest.encrypted_Password(LoginTest.java:108)
+
+testClasses.LoginTest.non_Registered_Email  Time elapsed: 2.107 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.LoginTest.non_Registered_Email(LoginTest.java:122)
+
+testClasses.LoginTest.deleted_Account_Login  Time elapsed: 2.051 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: eb6d38c7-4f44-4f92-9ca2-02ef9ba75bc8
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.LoginTest.deleted_Account_Login(LoginTest.java:132)
+

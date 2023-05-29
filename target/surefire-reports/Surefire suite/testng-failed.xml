@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="testClasses.LoginTest">
+        <methods>
+          <include name="decrypted_Password"/>
+          <include name="non_Registered_Email"/>
+          <include name="encrypted_Password"/>
+          <include name="initialize"/>
+          <include name="deleted_Account_Login"/>
+          <include name="launchApp_already_LoggedIn_User"/>
+          <include name="password_Field_Blank"/>
+          <include name="invalid_Username_Login"/>
+          <include name="userName_Field_Blank"/>
+          <include name="quit"/>
+          <include name="invalid_Password_Login"/>
+        </methods>
+      </class> <!-- testClasses.LoginTest -->
+      <class name="testClasses.UnsubscribedUserTest">
+        <methods>
+          <include name="initialize"/>
+          <include name="UnsubscribedUser"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- testClasses.UnsubscribedUserTest -->
+      <class name="testClasses.SubscribedUserTest">
+        <methods>
+          <include name="subscribedUser"/>
+        </methods>
+      </class> <!-- testClasses.SubscribedUserTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
