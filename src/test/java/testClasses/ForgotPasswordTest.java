@@ -87,6 +87,5 @@ public class ForgotPasswordTest extends BaseTest {
         Thread.sleep(10000);
         driver.get("www.yopmail.com");
 
-
     }
 }
