@@ -6,6 +6,7 @@ import pageObjects.Hamburger;
 import pageObjects.HomePage;
 import pageObjects.Login;
 import utilities.Assertion;
+import utilities.DriverManager;
 
 public class HumburgerMenuTest extends BaseTest {
 
@@ -23,13 +24,15 @@ public class HumburgerMenuTest extends BaseTest {
         login.valid_Login();
         hamburger.clickHumburgerIcon();
         Assertion.assertEquals(hamburger.getUserNameTXT(), UNSUB_USERNAME);
+
     }
 
-    @Test(priority = 1, enabled = true, description = "Verify that username logo appear with Premium")
+    @Test(priority = 2, enabled = true, description = "Verify that username logo appear with Premium")
     public void validatesubscribeUsernameLogo() throws Exception {
         Hamburger hamburger = new Hamburger();
         LoginTest loginTest = new LoginTest();
         Login login = new Login();
+        DriverManager.getDriver().launchApp();
         Thread.sleep(2000);
         login.enterUserName("clover@yopmail.com");
         login.enterPassword("123456");
@@ -42,7 +45,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
 
-    @Test(priority = 2, enabled = true, description = "Verify that page refreshes on tapping home icon")
+    @Test(priority = 3, enabled = true, description = "Verify that page refreshes on tapping home icon")
     public void refreshPageOnTap() throws Exception {
         HomePage homepage = new HomePage();
         LoginTest login = new LoginTest();
@@ -51,7 +54,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //TODO // Assertion Fix
-    @Test(priority = 3, enabled = true, description = "Verify that page refreshes on tapping home icon")
+    @Test(priority = 4, enabled = true, description = "Verify that page refreshes on tapping home icon")
     public void validateTabsSubscribeSearchFavourite() throws Exception {
         HomePage homepage = new HomePage();
         Hamburger hamburger = new Hamburger();
@@ -64,7 +67,7 @@ public class HumburgerMenuTest extends BaseTest {
 
     }
 
-    @Test(priority = 4, enabled = true, description = "Verify that plan detail page opens up")
+    @Test(priority = 5, enabled = true, description = "Verify that plan detail page opens up")
     public void planDetailPageOpensUp() throws Exception {
         HomePage homepage = new HomePage();
         Hamburger hamburger = new Hamburger();
@@ -75,7 +78,7 @@ public class HumburgerMenuTest extends BaseTest {
         hamburger.validatePlanPage();
     }
 
-    @Test(priority = 5, enabled = true, description = "Verify that search tab opens up")
+    @Test(priority = 6, enabled = true, description = "Verify that search tab opens up")
     public void searchTabOpensUp() throws Exception {
         HomePage homepage = new HomePage();
         Hamburger hamburger = new Hamburger();
@@ -87,7 +90,19 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
 
-    @Test(priority = 6, enabled = true, description = "Favorite page should open up along with 'SERIES' and 'EPISODE' section tab opens up")
+    @Test(priority = 7, enabled = true, description = "Information message should appear when non-existing data")
+    public void nonExistingDataEntered() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickSearch();
+        hamburger.enterDataSearchField("32456");
+        hamburger.validateNonexistingData();
+
+    }
+
+    @Test(priority = 8, enabled = true, description = "Favorite page should open up along with 'SERIES' and 'EPISODE' section tab opens up")
     public void SeriesEpisodeTabOpensUp() throws Exception {
         HomePage homepage = new HomePage();
         Hamburger hamburger = new Hamburger();
@@ -96,6 +111,75 @@ public class HumburgerMenuTest extends BaseTest {
         hamburger.clickHumburgerIcon();
         hamburger.clickFavourite();
         hamburger.validateSearchField();
+
+    }
+
+    @Test(priority = 9, enabled = true, description = "Verify that a popup appears after tapping on 'Share' tab under 'Hamburger'menu.")
+    public void popUpAppearsClickShare() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickShare();
+        hamburger.validateShareTab();
+
+    }
+
+    @Test(priority = 10, enabled = true, description = "Verify that 'Settings page' opens up after tapping on 'Settings' tab  under 'Hamburger' menu.")
+    public void settingPageOpensUp() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickSettingsTab();
+        hamburger.validateSettingsPage();
+
+    }
+
+    @Test(priority = 11, enabled = true, description = "Verify that 'Select language' popup opens up after tapping on 'Language' sub-tab")
+    public void selectLanugaugeOpensUp() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickSettingsTab();
+        hamburger.clickLanguageSubTab();
+        hamburger.validateLanguage();
+    }
+
+    @Test(priority = 12, enabled = true, description = "Verify that user should be able to select language")
+    public void selectLanugauge() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickSettingsTab();
+        hamburger.clickLanguageSubTab();
+        hamburger.clickEnglishLanguage();
+
+    }
+
+    @Test(priority = 13, enabled = true, description = "Verify that update email address page opens up")
+    public void updateEmailOpensUp() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickSettingsTab();
+        hamburger.clickUpdateEmail();
+        hamburger.validateUpdateEmail();
+
+    }
+
+    //TODO //Not getting validation message
+    @Test(priority = 13, enabled = true, description = "Verify that update email address page opens up")
+    public void updateEmailWith_NonExistingEmail() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickSettingsTab();
+        hamburger.clickUpdateEmail();
 
     }
 }
