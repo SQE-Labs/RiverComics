@@ -10,6 +10,8 @@ import utilities.DriverManager;
 
 public class HumburgerMenuTest extends BaseTest {
 
+    String DeletedAccountMSG = "Your account has been deleted. Please contact support@rivercomics.com to learn more";
+
     String SUB_USERNAME = "clover@yopmail.com";
     String UNSUB_USERNAME = "test0404@yopmail.com";
     String PREMIUM = "PREMIUM";
@@ -172,7 +174,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //TODO //Not getting validation message
-    @Test(priority = 13, enabled = true, description = "Verify that update email address page opens up")
+    @Test(priority = 14, enabled = true, description = "Verify that update email address page opens up")
     public void updateEmailWith_NonExistingEmail() throws Exception {
         Hamburger hamburger = new Hamburger();
         LoginTest login = new LoginTest();
@@ -180,6 +182,70 @@ public class HumburgerMenuTest extends BaseTest {
         hamburger.clickHumburgerIcon();
         hamburger.clickSettingsTab();
         hamburger.clickUpdateEmail();
+
+    }
+
+    @Test(priority = 15, enabled = true, description = "Verify that device list appear after tapping on 'Device List' sub-tab")
+    public void validateDeviceList() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickSettingsTab();
+        hamburger.clickDeviceList();
+        hamburger.validateDevices();
+
+    }
+    @Test(priority = 16, enabled = true, description = "Verify that popup opens up after tapping on 'Delete Account'")
+    public void validateDeleteAccount() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickSettingsTab();
+        hamburger.clickDeleteAccount();
+    }
+
+    @Test(priority = 17, enabled = true, description = "Verify that user try to login with deleted account")
+    public void deleted_Account_Login() throws Exception {
+        Login login = new Login();
+        Thread.sleep(2000);
+        login.enterUserName("Ella@yopmail.com");
+        login.enterPassword("123456");
+        login.clickLogin();
+        Assertion.assertEquals(login.getDeletedAccount(),DeletedAccountMSG);
+
+    }
+
+    @Test(priority = 18, enabled = true, description = "Verify that 'Select language' popup opens up on 'Change Language'")
+    public void selectLanguagePopUpOpensUp() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickChangeLanguage();
+        hamburger.validateLanguage();
+
+    }
+
+    @Test(priority = 19, enabled = true, description = "Verify that Contact Us page opens up after tapping on 'Contact us'")
+    public void contactUsOpensUp() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickContactUs();
+
+    }
+
+    @Test(priority = 20, enabled = true, description = "Verify that FAQ's page opens up after tapping on 'FAQs'")
+    public void FAQs() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        LoginTest login = new LoginTest();
+        login.valid_Login();
+        hamburger.clickHumburgerIcon();
+        hamburger.clickFAQs();
+        hamburger.validateFAQs();
 
     }
 }

@@ -2,7 +2,6 @@ package pageObjects;
 
 import base.BasePage;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 
@@ -46,17 +45,24 @@ public class Hamburger extends BasePage {
 
     private By confirmNewEmailAddress = By.id("com.river.comics.us:id/etReEnterNewEmail");
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView")
-    private MobileElement homeTab;
+    private By deviceList = By.id("com.river.comics.us:id/tvDeviceList");
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[7]/android.widget.TextView")
-    private MobileElement changeLanguage;
+    private By devices = By.id("com.river.comics.us:id/ivPhone");
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[5]")
-    private MobileElement contactUs;
+    private By FAQs = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[9]");
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[6]")
-    private MobileElement logOut;
+    private By validateFAQs = By.id("com.river.comics.us:id/webView");
+
+//    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView")
+//    private MobileElement homeTab;
+
+    private By changeLanguage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[7]/android.widget.TextView");
+
+
+    private By contactUs = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[5]");
+
+//    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[6]")
+//    private MobileElement logOut;
 
 
     public void enterDataSearchField(String searchValue) {
@@ -65,6 +71,11 @@ public class Hamburger extends BasePage {
 
     public void clickLanguageSubTab() throws InterruptedException {
         click(langauageSubtab);
+        Thread.sleep(2000);
+    }
+
+    public void clickDeviceList() throws InterruptedException {
+        click(deviceList);
         Thread.sleep(2000);
     }
 
@@ -114,9 +125,20 @@ public class Hamburger extends BasePage {
         isElementPresent(noRecordFound);
     }
 
+    public void validateDevices() throws InterruptedException {
+        Thread.sleep(2000);
+        isElementPresent(devices);
+    }
+
     public void validateSettingsPage() throws InterruptedException {
         Thread.sleep(2000);
         isElementPresent(deleteAccount);
+    }
+
+    public void clickDeleteAccount() throws InterruptedException {
+        click(deleteAccount);
+        Thread.sleep(2000);
+
     }
 
     public void validatePlanPage() throws InterruptedException {
@@ -149,6 +171,17 @@ public class Hamburger extends BasePage {
         isElementPresent(selectLanguage);
     }
 
+    public void validateFAQs() throws InterruptedException {
+        Thread.sleep(2000);
+        isElementPresent(validateFAQs);
+    }
+
+
+    public void clickChangeLanguage() throws InterruptedException {
+        click(changeLanguage);
+        Thread.sleep(1000);
+    }
+
     public String getUserNameTXT() {
         return getText(usernameText);
     }
@@ -169,40 +202,13 @@ public class Hamburger extends BasePage {
         return getText(favourite);
     }
 
+    public void clickFAQs() throws InterruptedException {
+        click(FAQs);
+        Thread.sleep(1000);
+    }
 
-//	public void clickUsername() {
-//		click(username);
-//	}
-//	
-//	public void clickHomeIcon() {
-//		click(homeTab);
-//	}
-//	
-//	public void clickSubscribeIcon() {
-//		click(subscribeTab);
-//	}
-//	
-//	public void clickSearchIcon() {
-//		click(searchTab);
-//	}
-//	
-//	public void clickFavouriteIcon() {
-//		click(favouriteTab);
-//	}
-//	
-//	public void clickShareIcon() {
-//		click(shareTab);
-//	}
-//	
-//	public void clickChangeLanguage() {
-//		click(changeLanguage);
-//	}
-//	
-//	public void clickContactUs() {
-//		click(contactUs);
-//	}
-//	
-//	public void clickLogoutIcon() {
-//		click(logOut);
-//	}
+    public void clickContactUs() throws InterruptedException {
+        click(contactUs);
+    }
+
 }
