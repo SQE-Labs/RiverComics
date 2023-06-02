@@ -66,9 +66,8 @@ public class BasePage {
 	}
 	public void acceptAlert() throws InterruptedException {
 		waitForAlert();
-
 		driver.switchTo().alert().accept();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	}
 
 		public static void assertEquals(String actual, String expected) {

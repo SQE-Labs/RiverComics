@@ -3,7 +3,9 @@ package pageObjects;
 import org.openqa.selenium.By;
 
 import base.BasePage;
+import org.testng.annotations.Test;
 import utilities.Assertion;
+import utilities.DriverManager;
 
 
 public class Login extends BasePage {
@@ -57,12 +59,12 @@ public class Login extends BasePage {
 
     public void enterPassword(String passwordTxt) throws InterruptedException {
         sendKeys(password, passwordTxt);
-        Thread.sleep(6000);
+        Thread.sleep(2000);
     }
 
     public void clickLogin() throws InterruptedException {
         click(loginBtn);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     public void clickOkayPopup() throws InterruptedException {
@@ -75,35 +77,35 @@ public class Login extends BasePage {
         login.enterUserName(userNameTxt);
         login.enterPassword(passWordTxt);
         login.clickLogin();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         login.acceptAlert();
         Thread.sleep(2000);
     }
 
-    public void validate_LoggedUser() throws InterruptedException {
-        Thread.sleep(4000);
-        isElementPresent(toolBar);
+    public boolean isToolbarPresent() throws InterruptedException {
+        Thread.sleep(2000);
+       return isElementPresent(toolBar);
     }
 
-    public void validate_SumitButton() throws InterruptedException {
-        Thread.sleep(4000);
-        isElementPresent(submitButton);
+    public boolean validate_SumitButton() throws InterruptedException {
+        Thread.sleep(2000);
+       return isElementPresent(submitButton);
     }
 
 
-    public void validate_NoUser() throws InterruptedException {
-        Thread.sleep(4000);
-        isElementPresent(validate_LoginButton);
+    public boolean validate_NoUser() throws InterruptedException {
+        Thread.sleep(2000);
+       return isElementPresent(validate_LoginButton);
     }
 
     public void clickForgotPassword() throws InterruptedException {
         click(forgotPassword);
-        Thread.sleep(4000);
+        Thread.sleep(1000);
     }
 
     public void clickSubmitButton() throws InterruptedException {
         click(submitButton);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     public void enterEmail(String emailText) throws InterruptedException {
@@ -141,4 +143,25 @@ public class Login extends BasePage {
     public String getPleaseCheckYourEmail() {
         return getText(pleaseCheckYourEmail);
     }
+
+
+    public void LoginUser() throws Exception {
+        Login login = new Login();
+        Hamburger hamburger = new Hamburger();
+        Thread.sleep(2000);
+        login.enterUserName("test0404@yopmail.com");
+        login.enterPassword("1234567");
+        login.clickLogin();
+        login.acceptAlert();
+    }
+
+    public void NoAlertLoginUser() throws Exception {
+        Login login = new Login();
+        Hamburger hamburger = new Hamburger();
+        Thread.sleep(2000);
+        login.enterUserName("test0404@yopmail.com");
+        login.enterPassword("1234567");
+        login.clickLogin();
+    }
+
 }

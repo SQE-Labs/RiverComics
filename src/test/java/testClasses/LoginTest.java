@@ -2,6 +2,7 @@ package testClasses;
 
 import org.testng.annotations.Test;
 import base.BaseTest;
+import pageObjects.Hamburger;
 import pageObjects.Login;
 import utilities.Assertion;
 import utilities.DriverManager;
@@ -18,17 +19,20 @@ public class LoginTest extends BaseTest {
         Login login = new Login();
         Thread.sleep(2000);
         login.validate_NoUser();
-
     }
 
     @Test(priority = 2, enabled = true, description = "Verify that user is able to login successfully")
     public void valid_Login() throws Exception {
         Login login = new Login();
+        Hamburger hamburger = new Hamburger();
         Thread.sleep(2000);
         login.enterUserName("test0404@yopmail.com");
         login.enterPassword("1234567");
         login.clickLogin();
         login.acceptAlert();
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
+
     }
 
     @Test(priority = 3, enabled = true, description = "Verify that 'Home' page opens up, when user has already logged into the application.")
@@ -39,12 +43,11 @@ public class LoginTest extends BaseTest {
         login.enterUserName("test0404@yopmail.com");
         login.enterPassword("1234567");
         login.clickLogin();
-        login.acceptAlert();
+        //Assertion.assertTrue(login.isToolbarPresent());
+       // login.acceptAlert();
         DriverManager.getDriver().closeApp();
-        Thread.sleep(10000);
         DriverManager.getDriver().launchApp();
-        Thread.sleep(20000);
-        login.validate_LoggedUser();
+        Assertion.assertTrue(login.isToolbarPresent());
 
     }
 
@@ -55,6 +58,8 @@ public class LoginTest extends BaseTest {
         Thread.sleep(2000);
         login.enterPassword("123456");
         login.clickLogin();
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
 
     }
 
@@ -65,6 +70,8 @@ public class LoginTest extends BaseTest {
         Thread.sleep(2000);
         login.enterUserName("test0404@yopmail.com");
         login.clickLogin();
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
 
     }
 
@@ -77,6 +84,8 @@ public class LoginTest extends BaseTest {
         login.enterPassword("123456");
         login.clickLogin();
         Assertion.assertEquals(login.getValidationMessage(),ValidationMSG);
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
     }
 
     @Test(priority = 7, enabled = true, description = "Verify that validation message appears on entering invalid password")
@@ -87,6 +96,9 @@ public class LoginTest extends BaseTest {
         login.enterPassword("12456");
         login.clickLogin();
         Assertion.assertEquals(login.getValidationMessage(),ValidationMSG);
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
+
     }
 
     @Test(priority = 8, enabled = true, description = "Verify that unmasking show password")
@@ -97,6 +109,8 @@ public class LoginTest extends BaseTest {
         login.enterPassword("1234567");
         login.clickShowPassword();
         Assertion.assertEquals(login.getValidationPWD(),ShowPWD);
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
     }
 
 
@@ -111,6 +125,8 @@ public class LoginTest extends BaseTest {
         Thread.sleep(2000);
         login.clickShowPassword();
         Assertion.assertEquals(login.getValidationPWD(),HidePWD);
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
 
     }
 
@@ -122,17 +138,21 @@ public class LoginTest extends BaseTest {
         login.enterPassword("1234567");
         login.clickLogin();
         Assertion.assertEquals(login.getValidationMessage(),ValidationMSG);
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
+
     }
 
     @Test(priority = 11, enabled = true, description = "Verify that user try to login with deleted account")
     public void deleted_Account_Login() throws Exception {
         Login login = new Login();
         Thread.sleep(2000);
-
         login.enterUserName("Ella@yopmail.com");
         login.enterPassword("123456");
         login.clickLogin();
         Assertion.assertEquals(login.getDeletedAccount(),DeletedAccountMSG);
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
 
     }
 }

@@ -17,7 +17,7 @@ public class Hamburger extends BasePage {
 
     private By search = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[3]");
 
-    private By favourite = By.id("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[4]");
+    private By favourite = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[4]");
 
     private By subscribeNow = By.id("com.river.comics.us:id/buttonBuyNow");
 
@@ -53,17 +53,13 @@ public class Hamburger extends BasePage {
 
     private By validateFAQs = By.id("com.river.comics.us:id/webView");
 
-//    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView")
-//    private MobileElement homeTab;
-
     private By changeLanguage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[7]/android.widget.TextView");
-
 
     private By contactUs = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[5]");
 
-//    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[6]")
-//    private MobileElement logOut;
+    private By logOut = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[10]");
 
+    private By yesLogout = By.id("android:id/button1");
 
     public void enterDataSearchField(String searchValue) {
         sendKeys(searchField, searchValue);
@@ -79,9 +75,18 @@ public class Hamburger extends BasePage {
         Thread.sleep(2000);
     }
 
+    public void clickLogout() throws InterruptedException {
+        clickHumburgerIcon();
+        Thread.sleep(2000);
+        click(logOut);
+        Thread.sleep(2000);
+        click(yesLogout);
+        Thread.sleep(2000);
+    }
+
     public void clickSettingsTab() throws InterruptedException {
         click(settingsTab);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     public void clickEnglishLanguage() throws InterruptedException {
@@ -92,17 +97,17 @@ public class Hamburger extends BasePage {
 
     public void clickHumburgerIcon() throws InterruptedException {
         click(humburgerIcon);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     public void clickUpdateEmail() throws InterruptedException {
         click(updateEmail);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     public void clickFavourite() throws InterruptedException {
         click(favourite);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     public void clickShare() throws InterruptedException {
@@ -117,7 +122,7 @@ public class Hamburger extends BasePage {
 
     public void clickSubscribe() throws InterruptedException {
         click(subscribe);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     public void validateNonexistingData() throws InterruptedException {
@@ -157,7 +162,7 @@ public class Hamburger extends BasePage {
     }
 
     public void validateSearchPage() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         isElementPresent(searchField);
     }
 
@@ -175,6 +180,8 @@ public class Hamburger extends BasePage {
         Thread.sleep(2000);
         isElementPresent(validateFAQs);
     }
+
+
 
 
     public void clickChangeLanguage() throws InterruptedException {
