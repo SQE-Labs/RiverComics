@@ -61,6 +61,28 @@ public class Hamburger extends BasePage {
 
     private By yesLogout = By.id("android:id/button1");
 
+    private By progressBar = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ProgressBar");
+
+    private By confirmEmail = By.id("com.river.comics.us:id/etReEnterNewEmail");
+
+    private By pleaseEnterCurrentEmailAddress = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By currentEmail = By.id("com.river.comics.us:id/etCurrentEmail");
+
+    private By submit = By.id("com.river.comics.us:id/btnSubmit");
+
+    private By validationMsgNonExistingEmail = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By toastMessageNewEmail = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By reEnterNewEmail = By.id("com.river.comics.us:id/etReEnterNewEmail");
+
+    private By newEmail = By.id("com.river.comics.us:id/etNewEmail");
+
+    private By sameEmailValidationMsg = By.id("/hierarchy/android.widget.Toast");
+
+    private By confirmEmailToastMsg = By.id("/hierarchy/android.widget.Toast");
+
     public void enterDataSearchField(String searchValue) {
         sendKeys(searchField, searchValue);
     }
@@ -72,6 +94,36 @@ public class Hamburger extends BasePage {
 
     public void clickDeviceList() throws InterruptedException {
         click(deviceList);
+        Thread.sleep(2000);
+    }
+
+    public void clickSubmit() throws InterruptedException {
+        click(submit);
+        Thread.sleep(2000);
+    }
+
+    public void enterNonExistingEmail(String emailText) throws InterruptedException {
+        sendKeys(currentEmail, emailText);
+        Thread.sleep(2000);
+    }
+
+    public void enterAlreadyRegisteredEmail(String emailText) throws InterruptedException {
+        sendKeys(currentEmail, emailText);
+        Thread.sleep(2000);
+    }
+
+    public void enterConfirmEmail(String emailText) throws InterruptedException {
+        sendKeys(reEnterNewEmail, emailText);
+        Thread.sleep(2000);
+    }
+
+    public void enterNewEmail(String emailText) throws InterruptedException {
+        sendKeys(newEmail, emailText);
+        Thread.sleep(2000);
+    }
+
+    public void enterCurrentEmail(String emailText) throws InterruptedException {
+        sendKeys(currentEmail, emailText);
         Thread.sleep(2000);
     }
 
@@ -94,6 +146,16 @@ public class Hamburger extends BasePage {
         Thread.sleep(2000);
     }
 
+    public boolean isEnglishLanguagePresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(selectEnglishLanguage);
+    }
+
+    public boolean isUpdateEmailPagePresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(confirmEmail);
+    }
+
 
     public void clickHumburgerIcon() throws InterruptedException {
         click(humburgerIcon);
@@ -104,6 +166,7 @@ public class Hamburger extends BasePage {
         click(updateEmail);
         Thread.sleep(2000);
     }
+
 
     public void clickFavourite() throws InterruptedException {
         click(favourite);
@@ -125,19 +188,39 @@ public class Hamburger extends BasePage {
         Thread.sleep(2000);
     }
 
-    public void validateNonexistingData() throws InterruptedException {
+    public boolean isNoRecordFoundMsgPresent() throws InterruptedException {
         Thread.sleep(2000);
-        isElementPresent(noRecordFound);
+        return isElementPresent(noRecordFound);
     }
 
-    public void validateDevices() throws InterruptedException {
-        Thread.sleep(2000);
-        isElementPresent(devices);
+    public boolean isProgressBarPresent() throws InterruptedException {
+        Thread.sleep(1000);
+        return isElementPresent(progressBar);
     }
 
-    public void validateSettingsPage() throws InterruptedException {
+    public boolean isSubscribeButtonPresent() throws InterruptedException {
         Thread.sleep(2000);
-        isElementPresent(deleteAccount);
+        return isElementPresent(subscribe);
+    }
+
+    public boolean isSearchButtonPresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(search);
+    }
+
+    public boolean isFavouriteButtonPresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(favourite);
+    }
+
+    public boolean isDevicePresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(devices);
+    }
+
+    public boolean isSettingsPagePresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(deleteAccount);
     }
 
     public void clickDeleteAccount() throws InterruptedException {
@@ -146,39 +229,49 @@ public class Hamburger extends BasePage {
 
     }
 
-    public void validatePlanPage() throws InterruptedException {
-        Thread.sleep(4000);
-        isElementPresent(subscribeNow);
+    public boolean isPlanDetailPagePresent() throws InterruptedException {
+        Thread.sleep(1000);
+        return isElementPresent(subscribeNow);
+    }
+    public boolean isLanguagePopUpOpensUp() throws InterruptedException {
+        Thread.sleep(1000);
+        return isElementPresent(selectLanguage);
     }
 
-    public void validateShareTab() throws InterruptedException {
+
+    public boolean isUserOnSharePage() throws InterruptedException {
         Thread.sleep(2000);
-        isElementPresent(validateShare);
+        return isElementPresent(validateShare);
     }
 
-    public void validateUpdateEmail() throws InterruptedException {
+    public boolean isConfirmNewEmailPresent() throws InterruptedException {
         Thread.sleep(2000);
-        isElementPresent(confirmNewEmailAddress);
+        return isElementPresent(confirmNewEmailAddress);
     }
 
-    public void validateSearchPage() throws InterruptedException {
+    public boolean isSearchPagePresent() throws InterruptedException {
         Thread.sleep(2000);
-        isElementPresent(searchField);
+        return isElementPresent(searchField);
+    }
+    public boolean isContactUsTabPresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(validateSeries);
     }
 
-    public void validateSearchField() throws InterruptedException {
+
+    public boolean isSeriesPresent() throws InterruptedException {
         Thread.sleep(2000);
-        isElementPresent(validateSeries);
+        return isElementPresent(validateSeries);
     }
 
-    public void validateLanguage() throws InterruptedException {
+    public boolean isLanguageTabPresent() throws InterruptedException {
         Thread.sleep(2000);
-        isElementPresent(selectLanguage);
+        return isElementPresent(selectLanguage);
     }
 
-    public void validateFAQs() throws InterruptedException {
+    public boolean isFAQsPresent() throws InterruptedException {
         Thread.sleep(2000);
-        isElementPresent(validateFAQs);
+        return isElementPresent(validateFAQs);
     }
 
 
@@ -197,15 +290,45 @@ public class Hamburger extends BasePage {
         return getText(premium);
     }
 
-    public String getSubscribeTab() {
+    public String getSameEmailValidationMsg() {
+        return getText(sameEmailValidationMsg);
+    }
+
+
+    public String getSubscribeTab() throws InterruptedException {
+        Thread.sleep(4000);
         return getText(subscribe);
     }
 
-    public String getSearchTab() {
+    public String getSearchTab() throws InterruptedException {
+        Thread.sleep(4000);
         return getText(search);
     }
 
-    public String getFavouriteTab() {
+    public String getNewEmailValidationMessage() throws InterruptedException {
+        Thread.sleep(2000);
+        return getText(toastMessageNewEmail);
+    }
+
+    public String getBlankEmailToastMsg()  {
+        return getText(pleaseEnterCurrentEmailAddress);
+    }
+
+    public String getValidationMessageConfirmEmailBlank()  {
+        return getText(confirmEmailToastMsg);
+    }
+
+    public String getNonExistingEmailToastMsg()  {
+        return getText(validationMsgNonExistingEmail);
+    }
+
+    public String getNewEmailToastMsg()  {
+        return getText(validationMsgNonExistingEmail);
+    }
+
+
+    public String getFavouriteTab() throws InterruptedException {
+        Thread.sleep(4000);
         return getText(favourite);
     }
 

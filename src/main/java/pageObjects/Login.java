@@ -46,6 +46,10 @@ public class Login extends BasePage {
 
     private By pleaseCheckYourEmail = By.id("android:id/message");
 
+    private By userblankToastMsg = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By passblankToastMsg = By.xpath("/hierarchy/android.widget.Toast");
+
 
 
     public void enterUserName(String usernameTxt) throws InterruptedException {
@@ -53,8 +57,9 @@ public class Login extends BasePage {
         Thread.sleep(2000);
     }
 
-    public void enterForgetEmail(String emailTxt) {
+    public void enterForgetEmail(String emailTxt) throws InterruptedException {
         sendKeys(enterEmail, emailTxt);
+        Thread.sleep(2000);
     }
 
     public void enterPassword(String passwordTxt) throws InterruptedException {
@@ -82,16 +87,34 @@ public class Login extends BasePage {
         Thread.sleep(2000);
     }
 
-    public boolean isToolbarPresent() throws InterruptedException {
-        Thread.sleep(2000);
-       return isElementPresent(toolBar);
+    public boolean isSubmitButtonPresent() throws InterruptedException {
+        Thread.sleep(5000);
+       return isElementPresent(submitButton);
+    }
+
+
+
+    public boolean isLoginButtonPresent() throws InterruptedException {
+        Thread.sleep(4000);
+        return isElementPresent(validate_LoginButton);
     }
 
     public boolean validate_SumitButton() throws InterruptedException {
         Thread.sleep(2000);
        return isElementPresent(submitButton);
     }
+    public void closeAppLaunchApp() {
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
+    }
 
+    public void closeApp() {
+        DriverManager.getDriver().closeApp();
+    }
+
+    public void launchApp() {
+        DriverManager.getDriver().launchApp();
+    }
 
     public boolean validate_NoUser() throws InterruptedException {
         Thread.sleep(2000);
@@ -100,7 +123,7 @@ public class Login extends BasePage {
 
     public void clickForgotPassword() throws InterruptedException {
         click(forgotPassword);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     public void clickSubmitButton() throws InterruptedException {
@@ -124,6 +147,14 @@ public class Login extends BasePage {
 
     public String getValidationMessage() {
         return getText(validationMessage);
+    }
+
+    public String getUserBlank_ValidationMessage(){
+        return getText(userblankToastMsg);
+    }
+
+    public String getPassBlank_ValidationMessage()  {
+        return getText(passblankToastMsg);
     }
 
     public String getToastMessage() {

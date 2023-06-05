@@ -84,7 +84,16 @@ public class BasePage {
 		return attributeValue;
 	}
 
-	protected boolean isElementPresent(By by) {
+//	protected boolean isElementPresent(By by) {
+//		try {
+//			driver.findElement(by);
+//			return true;
+//		} catch (NoSuchElementException e) {
+//			return false;
+//		}
+//	}
+
+	public boolean isElementPresent(By by) {
 		try {
 			driver.findElement(by);
 			return true;

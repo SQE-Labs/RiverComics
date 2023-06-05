@@ -12,13 +12,14 @@ public class LoginTest extends BaseTest {
     String DeletedAccountMSG = "Your account has been deleted. Please contact support@rivercomics.com to learn more";
     String ShowPWD = "1234567";
     String HidePWD = "1234567";
+    String BLANKUSER_TOASTMSG = "Please enter email address";
+    String BLANKPASS_TOASTMSG = "Please enter password";
 
 
     @Test(priority = 1, enabled = true, description = "Verify that no user is logged into the application")
     public void NoUser_Login() throws Exception {
         Login login = new Login();
-        Thread.sleep(2000);
-        login.validate_NoUser();
+        Assertion.assertTrue(login.isLoginButtonPresent());
     }
 
     @Test(priority = 2, enabled = true, description = "Verify that user is able to login successfully")
@@ -30,8 +31,9 @@ public class LoginTest extends BaseTest {
         login.enterPassword("1234567");
         login.clickLogin();
         login.acceptAlert();
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        login.closeAppLaunchApp();
+        Assertion.assertTrue(login.isLoginButtonPresent());
+
 
     }
 
@@ -43,35 +45,30 @@ public class LoginTest extends BaseTest {
         login.enterUserName("test0404@yopmail.com");
         login.enterPassword("1234567");
         login.clickLogin();
-        //Assertion.assertTrue(login.isToolbarPresent());
-       // login.acceptAlert();
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
-        Assertion.assertTrue(login.isToolbarPresent());
+        login.closeAppLaunchApp();
+        Assertion.assertTrue(login.isLoginButtonPresent());
 
     }
 
-    //TODO //Assertion Pending -- Not getting validation MSG
     @Test(priority = 4, enabled = true, description = "Verify that validation message appears,when 'Email' field is left blank")
     public void userName_Field_Blank() throws InterruptedException {
         Login login = new Login();
         Thread.sleep(2000);
         login.enterPassword("123456");
         login.clickLogin();
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        Assertion.assertEquals(login.getUserBlank_ValidationMessage(),BLANKUSER_TOASTMSG);
+        login.closeAppLaunchApp();
 
     }
 
-    //TODO //Assertion Pending -- Not getting validation MSG
     @Test(priority = 5, enabled = true, description = "Verify that validation message appears, when 'Password' field is left blank")
     public void password_Field_Blank() throws Exception {
         Login login = new Login();
         Thread.sleep(2000);
         login.enterUserName("test0404@yopmail.com");
         login.clickLogin();
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        Assertion.assertEquals(login.getPassBlank_ValidationMessage(),BLANKPASS_TOASTMSG);
+        login.closeAppLaunchApp();
 
     }
 
@@ -84,8 +81,7 @@ public class LoginTest extends BaseTest {
         login.enterPassword("123456");
         login.clickLogin();
         Assertion.assertEquals(login.getValidationMessage(),ValidationMSG);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        login.closeAppLaunchApp();
     }
 
     @Test(priority = 7, enabled = true, description = "Verify that validation message appears on entering invalid password")
@@ -96,8 +92,7 @@ public class LoginTest extends BaseTest {
         login.enterPassword("12456");
         login.clickLogin();
         Assertion.assertEquals(login.getValidationMessage(),ValidationMSG);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        login.closeAppLaunchApp();
 
     }
 
@@ -109,8 +104,7 @@ public class LoginTest extends BaseTest {
         login.enterPassword("1234567");
         login.clickShowPassword();
         Assertion.assertEquals(login.getValidationPWD(),ShowPWD);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        login.closeAppLaunchApp();
     }
 
 
@@ -125,8 +119,7 @@ public class LoginTest extends BaseTest {
         Thread.sleep(2000);
         login.clickShowPassword();
         Assertion.assertEquals(login.getValidationPWD(),HidePWD);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        login.closeAppLaunchApp();
 
     }
 
@@ -138,8 +131,7 @@ public class LoginTest extends BaseTest {
         login.enterPassword("1234567");
         login.clickLogin();
         Assertion.assertEquals(login.getValidationMessage(),ValidationMSG);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        login.closeAppLaunchApp();
 
     }
 
@@ -151,8 +143,7 @@ public class LoginTest extends BaseTest {
         login.enterPassword("123456");
         login.clickLogin();
         Assertion.assertEquals(login.getDeletedAccount(),DeletedAccountMSG);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        login.closeAppLaunchApp();
 
     }
 }

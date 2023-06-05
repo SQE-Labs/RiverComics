@@ -18,9 +18,8 @@ public class ForgotPasswordTest extends BaseTest {
         Login login = new Login();
         Thread.sleep(2000);
         login.clickForgotPassword();
-        login.validate_SumitButton();
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        Assertion.assertTrue(login.isSubmitButtonPresent());
+        login.closeAppLaunchApp();
     }
 
 
@@ -30,22 +29,21 @@ public class ForgotPasswordTest extends BaseTest {
         Thread.sleep(2000);
         login.clickForgotPassword();
         login.clickSubmitButton();
-       // Assertion.assertEquals(login.getToastMessage(), ToastMSG);
-        DriverManager.getDriver().closeApp();
+        Assertion.assertEquals(login.getToastMessage(), ToastMSG);
+        login.closeApp();
 
     }
 
     @Test(priority = 14, enabled = true, description = "Verify that when user enter spaces in email field")
     public void enterspaces_EmailField() throws Exception {
         Login login = new Login();
-        DriverManager.getDriver().launchApp();
+        login.launchApp();
         Thread.sleep(2000);
         login.clickForgotPassword();
         login.enterForgetEmail("     ");
         login.clickSubmitButton();
-       // Assertion.assertEquals(login.getToastMessage(), ToastMSG);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        Assertion.assertEquals(login.getToastMessage(), ToastMSG);
+        login.closeAppLaunchApp();
     }
 
     @Test(priority = 15, enabled = true, description = "Verify that when user enters invalid email")
@@ -55,9 +53,8 @@ public class ForgotPasswordTest extends BaseTest {
         login.clickForgotPassword();
         login.enterForgetEmail("ewafgdsa");
         login.clickSubmitButton();
-        //Assertion.assertEquals(login.getinvalidToastMessage(), invalidToastMSG);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        Assertion.assertEquals(login.getinvalidToastMessage(), invalidToastMSG);
+        login.closeAppLaunchApp();
     }
 
 
@@ -68,9 +65,8 @@ public class ForgotPasswordTest extends BaseTest {
         login.clickForgotPassword();
         login.enterForgetEmail("test7613@yopmail.com");
         login.clickSubmitButton();
-        //Assertion.assertEquals(login.getUserNotFoundToastMSG(), UserNotFoundMSG);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        Assertion.assertEquals(login.getUserNotFoundToastMSG(), UserNotFoundMSG);
+        login.closeAppLaunchApp();
 
     }
 
@@ -81,13 +77,12 @@ public class ForgotPasswordTest extends BaseTest {
         login.clickForgotPassword();
         login.enterForgetEmail("test0404@yopmail.com");
         login.clickSubmitButton();
-       // Assertion.assertEquals(login.getPleaseCheckYourEmail(), CheckEMAILMSG);
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        Assertion.assertEquals(login.getPleaseCheckYourEmail(), CheckEMAILMSG);
+        login.closeAppLaunchApp();
 
     }
 
-    //TO-DO
+    //TODO //How to validate email on Appium
     @Test(priority = 18, enabled = true, description = "Verify that user has received email on registered email address")
     public void validateEmailReceived() throws Exception {
         Login login = new Login();
@@ -96,8 +91,7 @@ public class ForgotPasswordTest extends BaseTest {
         login.enterForgetEmail("test0404@yopmail.com");
         login.clickSubmitButton();
         login.clickOkayPopup();
-        DriverManager.getDriver().closeApp();
-        DriverManager.getDriver().launchApp();
+        login.closeApp();
 
     }
 }
