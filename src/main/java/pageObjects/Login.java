@@ -69,7 +69,6 @@ public class Login extends BasePage {
 
     public void clickLogin() throws InterruptedException {
         click(loginBtn);
-        Thread.sleep(2000);
     }
 
     public void clickOkayPopup() throws InterruptedException {
@@ -179,7 +178,7 @@ public class Login extends BasePage {
     public void LoginUser() throws Exception {
         Login login = new Login();
         Hamburger hamburger = new Hamburger();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         login.enterUserName("test0404@yopmail.com");
         login.enterPassword("1234567");
         login.clickLogin();

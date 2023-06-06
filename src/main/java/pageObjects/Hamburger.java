@@ -83,8 +83,59 @@ public class Hamburger extends BasePage {
 
     private By confirmEmailToastMsg = By.id("/hierarchy/android.widget.Toast");
 
-    public void enterDataSearchField(String searchValue) {
+    private By differentEmailToastMSG = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By pleaseEnterNewEmailAddress = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By updatePassword = By.id("com.river.comics.us:id/tvUpdatePassword");
+
+    private By confirmNewPassword = By.id("com.river.comics.us:id/etReEnterNewdPassword");
+
+    private By currentPassword = By.id("com.river.comics.us:id/etCurrentPassword");
+
+    private By newPassword = By.id("com.river.comics.us:id/etNewPassword");
+
+    private By submitPassword = By.id("com.river.comics.us:id/btnSubmit");
+
+    private  By pleaseEnterCurrentPassword = By.xpath("/hierarchy/android.widget.Toast");
+
+
+    public String getTextPleaseEnterCurrentPassword() {
+        return getText(pleaseEnterCurrentPassword);
+    }
+
+    public void clickSubmitPassword() throws InterruptedException {
+        click(submitPassword);
+    }
+
+
+    public boolean isConfirmNewPasswordPresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(confirmNewPassword);
+    }
+
+    public void enterCurrentPassword(String passText) throws InterruptedException {
+        sendKeys(currentPassword, passText);
+        Thread.sleep(2000);
+    }
+
+    public void enterNewPassword(String passText) throws InterruptedException {
+        sendKeys(newPassword, passText);
+        Thread.sleep(2000);
+    }
+
+    public void enterConfirmPassword(String passText) throws InterruptedException {
+        sendKeys(confirmNewPassword, passText);
+        Thread.sleep(2000);
+    }
+
+    public void enterDataSearchField(String searchValue) throws InterruptedException {
         sendKeys(searchField, searchValue);
+    }
+
+    public void clickUpdatePassword() throws InterruptedException {
+        click(updatePassword);
+        Thread.sleep(1000);
     }
 
     public void clickLanguageSubTab() throws InterruptedException {
@@ -99,12 +150,12 @@ public class Hamburger extends BasePage {
 
     public void clickSubmit() throws InterruptedException {
         click(submit);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     public void enterNonExistingEmail(String emailText) throws InterruptedException {
-        sendKeys(currentEmail, emailText);
         Thread.sleep(2000);
+        sendKeys(currentEmail, emailText);
     }
 
     public void enterAlreadyRegisteredEmail(String emailText) throws InterruptedException {
@@ -137,6 +188,7 @@ public class Hamburger extends BasePage {
     }
 
     public void clickSettingsTab() throws InterruptedException {
+        Thread.sleep(2000);
         click(settingsTab);
         Thread.sleep(2000);
     }
@@ -159,7 +211,7 @@ public class Hamburger extends BasePage {
 
     public void clickHumburgerIcon() throws InterruptedException {
         click(humburgerIcon);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
     }
 
     public void clickUpdateEmail() throws InterruptedException {
@@ -194,7 +246,6 @@ public class Hamburger extends BasePage {
     }
 
     public boolean isProgressBarPresent() throws InterruptedException {
-        Thread.sleep(1000);
         return isElementPresent(progressBar);
     }
 
@@ -233,6 +284,7 @@ public class Hamburger extends BasePage {
         Thread.sleep(1000);
         return isElementPresent(subscribeNow);
     }
+
     public boolean isLanguagePopUpOpensUp() throws InterruptedException {
         Thread.sleep(1000);
         return isElementPresent(selectLanguage);
@@ -253,6 +305,7 @@ public class Hamburger extends BasePage {
         Thread.sleep(2000);
         return isElementPresent(searchField);
     }
+
     public boolean isContactUsTabPresent() throws InterruptedException {
         Thread.sleep(2000);
         return isElementPresent(validateSeries);
@@ -275,11 +328,13 @@ public class Hamburger extends BasePage {
     }
 
 
-
-
     public void clickChangeLanguage() throws InterruptedException {
         click(changeLanguage);
         Thread.sleep(1000);
+    }
+
+    public String getDifferentEmailTXT() {
+        return getText(confirmEmailToastMsg);
     }
 
     public String getUserNameTXT() {
@@ -291,7 +346,7 @@ public class Hamburger extends BasePage {
     }
 
     public String getSameEmailValidationMsg() {
-        return getText(sameEmailValidationMsg);
+        return getText(differentEmailToastMSG);
     }
 
 
@@ -306,23 +361,22 @@ public class Hamburger extends BasePage {
     }
 
     public String getNewEmailValidationMessage() throws InterruptedException {
-        Thread.sleep(2000);
-        return getText(toastMessageNewEmail);
+        return getText(pleaseEnterNewEmailAddress);
     }
 
-    public String getBlankEmailToastMsg()  {
+    public String getBlankEmailToastMsg() {
         return getText(pleaseEnterCurrentEmailAddress);
     }
 
-    public String getValidationMessageConfirmEmailBlank()  {
+    public String getValidationMessageConfirmEmailBlank() {
         return getText(confirmEmailToastMsg);
     }
 
-    public String getNonExistingEmailToastMsg()  {
+    public String getNonExistingEmailToastMsg() {
         return getText(validationMsgNonExistingEmail);
     }
 
-    public String getNewEmailToastMsg()  {
+    public String getNewEmailToastMsg() {
         return getText(validationMsgNonExistingEmail);
     }
 

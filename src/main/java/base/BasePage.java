@@ -44,7 +44,7 @@ public class BasePage {
 	}
 
 	public void click(By path) throws InterruptedException {
-	 // waitForVisibility(path);
+	   // waitForVisibility(path);
 		Thread.sleep(2000);
 		//TestUtils.log().info(mobileElement.getText() + " is clicked");
 		//ExtentLogger.info("<b>" + mobileElement.getText() + "</b> is clicked");
@@ -57,7 +57,8 @@ public class BasePage {
 		mobileElement.sendKeys(txt);
 	}
 
-	public void sendKeys(By path, String txt) {
+	public void sendKeys(By path, String txt) throws InterruptedException {
+		Thread.sleep(2000);
 		//waitForVisibility(path);
 		//TestUtils.log().info("Filling " + txt + " in " + mobileElement.getText());
 		//ExtentLogger.info("Filling <b>" + txt + "</b> in <b>" + mobileElement.getText() + "</b>");
@@ -67,7 +68,7 @@ public class BasePage {
 	public void acceptAlert() throws InterruptedException {
 		waitForAlert();
 		driver.switchTo().alert().accept();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 
 		public static void assertEquals(String actual, String expected) {

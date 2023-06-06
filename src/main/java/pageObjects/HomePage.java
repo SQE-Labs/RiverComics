@@ -28,10 +28,6 @@ public class HomePage extends BasePage {
         //	click(logo);
     }
 
-//	public void clickSeries() {
-//		click(selectSeries);	
-//	}
-
     public void selectSeries() throws InterruptedException {
         click(selectSeries);
         Thread.sleep(1000);
