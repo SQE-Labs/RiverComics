@@ -19,7 +19,8 @@ public class HumburgerMenuTest extends BaseTest {
     String NONEXISTING_EMAIL_MESSAGE = "You have entered wrong email address";
     String NEW_EMAIL_MESSAGE = "Please enter new email address";
     String SAME_EMAIL_MESSAGE = "You have entered wrong email address";
-    String CURRENTPASSWORD_TOAST_MSG = "Please enter current password";
+    String PASS_CHANGE_SUCCESS_TXT = "Your password has been changed successfully.";
+    String AREYOUSURE_LOGOUT = "Are you sure you want to logout?";
     String DIFF_NEW_EMAIL = "Email addresses do not match";
 
     //115
@@ -340,12 +341,11 @@ public class HumburgerMenuTest extends BaseTest {
         login.closeApp();
         //Assertion.assertEquals(Hamburger.getNewEmailValidationMessage(),DIFF_NEW_EMAIL);
 
-
     }
 
     //141
-    //TODO Verify email with the link sent on registered email address
-    @Test(priority = 40, enabled = false, description = "Verify that Email change request verification link has been sent to your registered email")
+    //TODO --- Verify email with the link sent on registered email address
+    @Test(priority = 40, enabled = true, description = "Verify that Email change request verification link has been sent to your registered email")
     public void validateLink_OnRegisteredEmail() throws Exception {
         Hamburger Hamburger = new Hamburger();
         Login login = new Login();
@@ -358,7 +358,6 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.enterNewEmail("test4331@yopmail.com");
         Hamburger.enterConfirmEmail("test4332@yopmail.com");
         Hamburger.clickSubmit();
-        //Assertion.assertEquals(Hamburger.getNewEmailValidationMessage(),DIFF_NEW_EMAIL);
         login.closeApp();
 
     }
@@ -379,11 +378,12 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.enterConfirmEmail("test4331@yopmail.com");
         Hamburger.clickSubmit();
         login.closeApp();
+
     }
 
     //143
-    //TODO To be automated after "validateLink_OnRegisteredEmail"
-    @Test(priority = 42, enabled = false, description = "Verify that User is able to login with updated Email")
+    //TODO --- To be automated after "validateLink_OnRegisteredEmail" test case
+    @Test(priority = 42, enabled = true, description = "Verify that User should be able to login with newly updated Email address")
     public void loginWith_UpdatedEmail() throws Exception {
         Login login = new Login();
         login.launchApp();
@@ -397,7 +397,7 @@ public class HumburgerMenuTest extends BaseTest {
 
 
     //144
-    @Test(priority = 43, enabled = true, description = "Verify that User is able to login with updated Email")
+    @Test(priority = 43, enabled = true, description = "Verify that updated email appear below the rivercomics logo")
     public void updatedEmail_UnderLOGO() throws Exception {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
@@ -412,7 +412,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //145
-    @Test(priority = 44, enabled = true, description = "Verify that User is able to login with updated Email")
+    @Test(priority = 44, enabled = true, description = "Verify that update password tab opens up")
     public void updatePasswordSubtab_OpensUp() throws Exception {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
@@ -427,7 +427,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //146
-    @Test(priority = 45, enabled = true, description = "Verify that User is able to login with updated Email")
+    @Test(priority = 45, enabled = true, description = "Verify that when user leave current password field blank.")
     public void currentPasswordBlank_InUpdatePasswordSubtab() throws Exception {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
@@ -445,7 +445,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //147
-    @Test(priority = 46, enabled = true, description = "Verify that User is able to login with updated Email")
+    @Test(priority = 46, enabled = true, description = "Verify that when User enters invalid password in current password field")
     public void invalidPassword_InCurrentPassword() throws Exception {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
@@ -464,7 +464,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //148
-    @Test(priority = 47, enabled = true, description = "Verify that User is able to login with updated Email")
+    @Test(priority = 47, enabled = true, description = "Verify that when User enters invalid password in new password field")
     public void invalidPassword_InNewPassword() throws Exception {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
@@ -482,7 +482,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //149
-    @Test(priority = 48, enabled = true, description = "Verify that User is able to login with updated Email")
+    @Test(priority = 48, enabled = true, description = "Verify that when User enters same password in both the fields")
     public void samePassword_InCurrentandNewPassword() throws Exception {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
@@ -500,7 +500,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //150
-    @Test(priority = 49, enabled = true, description = "Verify that User is able to login with updated Email")
+    @Test(priority = 49, enabled = true, description = "Verify that validation message appears, when either less than 6 or more than 14 characters is entered")
     public void lessThan6_Character_InUpdatePassword() throws Exception {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
@@ -517,9 +517,70 @@ public class HumburgerMenuTest extends BaseTest {
         login.closeApp();
     }
 
+    //151
+    @Test(priority = 50, enabled = true, description = "Verify that validation message appears, when different password is entered in 'New password' and 'Confirm' password' fields")
+    public void diferentPasswords_InNewConfirmField() throws Exception {
+        Hamburger Hamburger = new Hamburger();
+        Login login = new Login();
+        login.launchApp();
+        Thread.sleep(2000);
+        login.LoginUser();
+        Hamburger.clickHumburgerIcon();
+        Hamburger.clickSettingsTab();
+        Hamburger.clickUpdatePassword();
+        Hamburger.enterCurrentPassword("1234567");
+        Hamburger.enterNewPassword("1234");
+        Hamburger.enterConfirmPassword("1232");
+        Hamburger.clickSubmitPassword();
 
-    //122
-    @Test(priority = 50, enabled = true, description = "Verify that device list appear after tapping on 'Device List' sub-tab")
+    }
+
+    //152
+    @Test(priority = 51, enabled = true, description = "Verify that validation message appears, when 'Confirm new password' field is left blank")
+    public void confirmNewPassword_Blank() throws Exception {
+        Hamburger Hamburger = new Hamburger();
+        Login login = new Login();
+        login.launchApp();
+        Thread.sleep(2000);
+        login.LoginUser();
+        Hamburger.clickHumburgerIcon();
+        Hamburger.clickSettingsTab();
+        Hamburger.clickUpdatePassword();
+        Hamburger.enterCurrentPassword("1234567");
+        Hamburger.enterNewPassword("1234");
+        Hamburger.clickSubmitPassword();
+    }
+
+    //153 - 154
+    @Test(priority = 52, enabled = true, description = "Verify that password should get updated when valid data is entered in all mandatory fields and User is logged in with new password")
+    public void validDetails_WithValidateLoginPassword() throws Exception {
+        Hamburger Hamburger = new Hamburger();
+        Login login = new Login();
+        login.launchApp();
+        Thread.sleep(2000);
+        login.enterUserName("john0404@yopmail.com");
+        login.enterPassword("1234567");
+        login.clickLogin();
+        login.acceptAlert();
+        Hamburger.clickHumburgerIcon();
+        Hamburger.clickSettingsTab();
+        Hamburger.clickUpdatePassword();
+        Hamburger.enterCurrentPassword("1234567");
+        Hamburger.enterNewPassword("123456");
+        Hamburger.enterConfirmPassword("123456");
+        Hamburger.clickSubmitPassword();
+        Assertion.assertEquals(Hamburger.getPasswordChangedText(),PASS_CHANGE_SUCCESS_TXT);
+        Hamburger.clickHumburgerIcon();
+        Hamburger.clickSettingsTab();
+        Hamburger.clickLogout();
+        login.enterUserName("test0404@yopmail.com");
+        login.enterPassword("123456");
+        login.clickLogin();
+        login.acceptAlert();
+    }
+
+    //155
+    @Test(priority = 53, enabled = true, description = "Verify that device list appears")
     public void validateDeviceList() throws Exception {
         Hamburger Hamburger = new Hamburger();
         Login login = new Login();
@@ -532,10 +593,10 @@ public class HumburgerMenuTest extends BaseTest {
         login.closeApp();
     }
 
-    //122
-    //Not Added Further steps Because user will be deleted
-    @Test(priority = 51, enabled = true, description = "Verify that popup opens up after tapping on 'Delete Account'")
-    public void validateDeleteAccount() throws Exception {
+
+    //156
+    @Test(priority = 54, enabled = true, description = "Verify that 'Are you sure you want to delete account?' popup opens up")
+    public void deletePopUp_OpensUp() throws Exception {
         Hamburger Hamburger = new Hamburger();
         Login login = new Login();
         login.launchApp();
@@ -545,9 +606,22 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.clickDeleteAccount();
         login.closeApp();
     }
-    //122
-    @Test(priority = 52, enabled = true, description = "Verify that user try to login with deleted account")
-    public void deleted_Account_Login() throws Exception {
+
+    //157 --- This test case cannot be automated due to sign up functionality can not be done because of captcha issue.
+    @Test(priority = 55, enabled = false, description = "Verify that account deleted successfully")
+    public void delete_Success() throws Exception {
+        Hamburger hamburger = new Hamburger();
+        Login login = new Login();
+        login.launchApp();
+        Thread.sleep(2000);
+        login.enterUserName("Ella@yopmail.com");
+        login.enterPassword("123456");
+        login.clickLogin();
+    }
+
+    //158  --- This test case cannot be automated due to sign up functionality can not be done because of captcha issue.
+    @Test(priority = 56, enabled = false, description = "Verify that when user tries to login with deleted account's credentials")
+    public void loginWith_Deleted_Account() throws Exception {
         Login login = new Login();
         login.launchApp();
         Thread.sleep(2000);
@@ -558,8 +632,8 @@ public class HumburgerMenuTest extends BaseTest {
         login.closeApp();
 
     }
-    //122
-    @Test(priority = 53, enabled = true, description = "Verify that 'Select language' popup opens up on 'Change Language'")
+    //159
+    @Test(priority = 57, enabled = true, description = "Verify that 'Select language' popup opens up")
     public void selectLanguagePopUpOpensUp() throws Exception {
         Hamburger Hamburger = new Hamburger();
         Login login = new Login();
@@ -571,9 +645,8 @@ public class HumburgerMenuTest extends BaseTest {
         login.closeApp();
 
     }
-    //122
-    //TODO //Assertion pending due to xpath issue.
-    @Test(priority = 54, enabled = true, description = "Verify that Contact Us page opens up after tapping on 'Contact us'")
+    //160
+    @Test(priority = 58, enabled = true, description = "Verify that Contact Us page opens up")
     public void contactUsOpensUp() throws Exception {
         Hamburger Hamburger = new Hamburger();
         Login login = new Login();
@@ -585,8 +658,8 @@ public class HumburgerMenuTest extends BaseTest {
         login.closeApp();
 
     }
-    //122
-    @Test(priority = 55, enabled = true, description = "Verify that FAQ's page opens up after tapping on 'FAQs'")
+    //161
+    @Test(priority = 59, enabled = true, description = "Verify that FAQ's page opens up")
     public void FAQs() throws Exception {
         Hamburger Hamburger = new Hamburger();
         Login login = new Login();
@@ -596,6 +669,63 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.clickFAQs();
         Assertion.assertTrue(Hamburger.isFAQsPresent());
         login.closeApp();
+
+    }
+
+    //162
+    @Test(priority = 60, enabled = true, description = "Verify that 'Are you sure you want to logout?' popup opens up")
+    public void log_OuT_pageOpensUp() throws Exception {
+        Hamburger Hamburger = new Hamburger();
+        Login login = new Login();
+        login.launchApp();
+        login.LoginUser();
+        Hamburger.clickHumburgerIcon();
+        Hamburger.clickLogout();
+      //  Assertion.assertEquals(Hamburger.getLogOutText(),AREYOUSURE_LOGOUT);
+        login.closeApp();
+
+
+    }
+    //163
+    @Test(priority = 61, enabled = true, description = "Verify that user is able to logout after selecting 'YES' button")
+    public void log_OuT_Success() throws Exception {
+        Hamburger Hamburger = new Hamburger();
+        Login login = new Login();
+        login.launchApp();
+        login.LoginUser();
+        Hamburger.clickHumburgerIcon();
+        Hamburger.clickLogout();
+        Assertion.assertTrue(login.isLoginButtonPresent());
+        login.closeApp();
+
+    }
+
+    //164
+    @Test(priority = 62, enabled = true, description = "Verify that Privacy Policy page opens up")
+    public void privacy_PoLicy() throws Exception {
+        Hamburger Hamburger = new Hamburger();
+        Login login = new Login();
+        login.launchApp();
+        login.LoginUser();
+        Hamburger.clickHumburgerIcon();
+        Hamburger.clickPrivacyPolicy();
+       // Assertion.assertTrue(Hamburger.isPrivacyPolicyContainerPresent());
+        login.closeApp();
+
+    }
+
+    //165
+    @Test(priority = 63, enabled = true, description = "Verify that 'TERMS AND CONDTION' page opens up")
+    public void termsAndConditioN() throws Exception {
+        Hamburger Hamburger = new Hamburger();
+        Login login = new Login();
+        login.launchApp();
+        login.LoginUser();
+        Hamburger.clickHumburgerIcon();
+        Hamburger.clickTermsAndConditions();
+        //Assertion.assertTrue(Hamburger.istermsAndConditionContainerPresent());
+        login.closeApp();
+
 
     }
 }

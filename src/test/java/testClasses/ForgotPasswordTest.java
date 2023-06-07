@@ -33,7 +33,6 @@ public class ForgotPasswordTest extends BaseTest {
         login.clickSubmitButton();
         Assertion.assertEquals(login.getToastMessage(), ToastMSG);
         login.closeApp();
-
     }
 
     @Test(priority = 14, enabled = true, description = "Verify that when user enter spaces in email field")
@@ -87,7 +86,7 @@ public class ForgotPasswordTest extends BaseTest {
 
     }
 
-    //TODO //How to validate email on Appium
+    //TODO --- How to validate email on Appium
     @Test(priority = 18, enabled = true, description = "Verify that user has received email on registered email address")
     public void validateEmailReceived() throws Exception {
         Login login = new Login();

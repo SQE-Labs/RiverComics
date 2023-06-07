@@ -31,7 +31,7 @@ public class LoginTest extends BaseTest {
         login.launchApp();
         Thread.sleep(2000);
         login.enterUserName("test0404@yopmail.com");
-        login.enterPassword("1234567");
+        login.enterPassword("123456");
         login.clickLogin();
         login.acceptAlert();
         login.closeAppLaunchApp();
@@ -47,7 +47,7 @@ public class LoginTest extends BaseTest {
         login.launchApp();
         Thread.sleep(2000);
         login.enterUserName("test0404@yopmail.com");
-        login.enterPassword("1234567");
+        login.enterPassword("123456");
         login.clickLogin();
         login.closeAppLaunchApp();
         Assertion.assertTrue(login.isLoginButtonPresent());

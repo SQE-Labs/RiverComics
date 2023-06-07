@@ -35,7 +35,7 @@ public void initialize() throws Exception {
     new DriverManager().initializeDriver();
 
 }
-   // @BeforeTest
+    // @BeforeTest
     public <LoginTest> void login() throws Exception {
         Login login = new Login();
         new DriverManager().initializeDriver();
@@ -44,16 +44,14 @@ public void initialize() throws Exception {
         login.clickLogin();
         login.acceptAlert();
 
-    }
-    //@BeforeTest
-    public void logout() throws Exception {
-        // new ServerManager().startServer();
-        Hamburger hamburger = new Hamburger();
-        hamburger.clickHumburgerIcon();
-        hamburger.clickLogout();
+   // @AfterTest
+//    public void CloseApp() throws Exception {
+//        Login login = new Login();
+//        login.closeApp();
 
 
-    }
+   }
+
     @BeforeMethod
     public void beforeMethod(Method method) {
         Test test = method.getAnnotation(Test.class);

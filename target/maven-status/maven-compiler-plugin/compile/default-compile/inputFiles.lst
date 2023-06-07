@@ -1,4 +1,5 @@
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\base\BasePage.java
+C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\listeners\TestReporter.java
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\pageObjects\VideoPlay.java
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\base\BaseTest.java
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\pageObjects\Favourites.java
@@ -6,6 +7,9 @@ C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\pageObjects\Log
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\utilities\DriverManager.java
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\utilities\CapabilitiesManager.java
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\pageObjects\SeriesDetail.java
+C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\utilities\ReportGenerator.java
+C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\utilities\Screenshot.java
+C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\listeners\TestRunListener.java
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\pageObjects\HomePage.java
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\pageObjects\Subscribe.java
 C:\Users\Itsqe\eclipse-workspace\RiverComicsMobile\src\main\java\pageObjects\Setting.java

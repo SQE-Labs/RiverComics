@@ -51,7 +51,6 @@ public class Login extends BasePage {
     private By passblankToastMsg = By.xpath("/hierarchy/android.widget.Toast");
 
 
-
     public void enterUserName(String usernameTxt) throws InterruptedException {
         sendKeys(userName, usernameTxt);
         Thread.sleep(2000);
@@ -69,6 +68,7 @@ public class Login extends BasePage {
 
     public void clickLogin() throws InterruptedException {
         click(loginBtn);
+        Thread.sleep(2000);
     }
 
     public void clickOkayPopup() throws InterruptedException {
@@ -88,9 +88,8 @@ public class Login extends BasePage {
 
     public boolean isSubmitButtonPresent() throws InterruptedException {
         Thread.sleep(5000);
-       return isElementPresent(submitButton);
+        return isElementPresent(submitButton);
     }
-
 
 
     public boolean isLoginButtonPresent() throws InterruptedException {
@@ -100,8 +99,9 @@ public class Login extends BasePage {
 
     public boolean validate_SumitButton() throws InterruptedException {
         Thread.sleep(2000);
-       return isElementPresent(submitButton);
+        return isElementPresent(submitButton);
     }
+
     public void closeAppLaunchApp() {
         DriverManager.getDriver().closeApp();
         DriverManager.getDriver().launchApp();
@@ -117,7 +117,7 @@ public class Login extends BasePage {
 
     public boolean validate_NoUser() throws InterruptedException {
         Thread.sleep(2000);
-       return isElementPresent(validate_LoginButton);
+        return isElementPresent(validate_LoginButton);
     }
 
     public void clickForgotPassword() throws InterruptedException {
@@ -148,11 +148,11 @@ public class Login extends BasePage {
         return getText(validationMessage);
     }
 
-    public String getUserBlank_ValidationMessage(){
+    public String getUserBlank_ValidationMessage() {
         return getText(userblankToastMsg);
     }
 
-    public String getPassBlank_ValidationMessage()  {
+    public String getPassBlank_ValidationMessage() {
         return getText(passblankToastMsg);
     }
 
@@ -163,6 +163,7 @@ public class Login extends BasePage {
     public String getinvalidToastMessage() {
         return getText(invalidToastMessage);
     }
+
     public String getUserNotFoundToastMSG() {
         return getText(userNotFoundToastMSG);
     }
@@ -170,6 +171,7 @@ public class Login extends BasePage {
     public String getValidationPWD() {
         return getText(password);
     }
+
     public String getPleaseCheckYourEmail() {
         return getText(pleaseCheckYourEmail);
     }
@@ -180,7 +182,7 @@ public class Login extends BasePage {
         Hamburger hamburger = new Hamburger();
         Thread.sleep(4000);
         login.enterUserName("test0404@yopmail.com");
-        login.enterPassword("1234567");
+        login.enterPassword("123456");
         login.clickLogin();
         login.acceptAlert();
     }

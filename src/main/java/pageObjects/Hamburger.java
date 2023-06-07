@@ -73,13 +73,9 @@ public class Hamburger extends BasePage {
 
     private By validationMsgNonExistingEmail = By.xpath("/hierarchy/android.widget.Toast");
 
-    private By toastMessageNewEmail = By.xpath("/hierarchy/android.widget.Toast");
-
     private By reEnterNewEmail = By.id("com.river.comics.us:id/etReEnterNewEmail");
 
     private By newEmail = By.id("com.river.comics.us:id/etNewEmail");
-
-    private By sameEmailValidationMsg = By.id("/hierarchy/android.widget.Toast");
 
     private By confirmEmailToastMsg = By.id("/hierarchy/android.widget.Toast");
 
@@ -99,28 +95,29 @@ public class Hamburger extends BasePage {
 
     private  By pleaseEnterCurrentPassword = By.xpath("/hierarchy/android.widget.Toast");
 
+    private By privacyPolicy = By.id("com.river.comics.us:id/tv_privacy");
 
-    public String getTextPleaseEnterCurrentPassword() {
-        return getText(pleaseEnterCurrentPassword);
-    }
+    private By termsAndCondtions = By.id("com.river.comics.us:id/tv_terms");
 
-    public void clickSubmitPassword() throws InterruptedException {
-        click(submitPassword);
-    }
+    private By privacyPolicyContainer = By.id("com.river.comics.us:id/a_container");
 
+    private By termsAndConditionContainer = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]");
 
-    public boolean isConfirmNewPasswordPresent() throws InterruptedException {
+    private By logOUT = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[10]/android.widget.TextView");
+
+    private By AreYouSureYouWantToLogout = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView");
+
+    private By yesLogOut = By.id("android:id/button1");
+
+    private By passwordChangedSuccessfully = By.id("/hierarchy/android.widget.Toast");
+
+    public void enterNewPassword(String passText) throws InterruptedException {
+        sendKeys(newPassword, passText);
         Thread.sleep(2000);
-        return isElementPresent(confirmNewPassword);
     }
 
     public void enterCurrentPassword(String passText) throws InterruptedException {
         sendKeys(currentPassword, passText);
-        Thread.sleep(2000);
-    }
-
-    public void enterNewPassword(String passText) throws InterruptedException {
-        sendKeys(newPassword, passText);
         Thread.sleep(2000);
     }
 
@@ -129,13 +126,68 @@ public class Hamburger extends BasePage {
         Thread.sleep(2000);
     }
 
+    public void clickYesLogOut() throws InterruptedException {
+        click(yesLogOut);
+    }
+
+    public boolean isPrivacyPolicyContainerPresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(privacyPolicyContainer);
+    }
+
+    public boolean istermsAndConditionContainerPresent() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.switchTo().frame(driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView")).getText());
+        return isElementPresent(termsAndConditionContainer);
+    }
+
+    public String getTextPleaseEnterCurrentPassword() {
+        return getText(pleaseEnterCurrentPassword);
+    }
+
+    public String getLogOutText() throws InterruptedException {
+        Thread.sleep(2000);
+        return getText(AreYouSureYouWantToLogout);
+    }
+
+    public String getPasswordChangedText() throws InterruptedException {
+        Thread.sleep(2000);
+        return getText(passwordChangedSuccessfully);
+    }
+
+    public void clickLogOut() throws InterruptedException {
+        click(logOUT);
+    }
+
+    public void clickSubmitPassword() throws InterruptedException {
+        click(submitPassword);
+        Thread.sleep(2000);
+    }
+
+    public void clickPrivacyPolicy() throws InterruptedException {
+        click(privacyPolicy);
+        Thread.sleep(7000);
+    }
+
+    public void clickTermsAndConditions() throws InterruptedException {
+        click(termsAndCondtions);
+        Thread.sleep(15000);
+    }
+
+
+    public boolean isConfirmNewPasswordPresent() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(confirmNewPassword);
+    }
+
+
     public void enterDataSearchField(String searchValue) throws InterruptedException {
         sendKeys(searchField, searchValue);
     }
 
     public void clickUpdatePassword() throws InterruptedException {
         click(updatePassword);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     public void clickLanguageSubTab() throws InterruptedException {
@@ -210,8 +262,9 @@ public class Hamburger extends BasePage {
 
 
     public void clickHumburgerIcon() throws InterruptedException {
+        Thread.sleep(2000);
         click(humburgerIcon);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     public void clickUpdateEmail() throws InterruptedException {
