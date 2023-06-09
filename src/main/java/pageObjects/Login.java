@@ -181,7 +181,7 @@ public class Login extends BasePage {
         Login login = new Login();
         Hamburger hamburger = new Hamburger();
         Thread.sleep(4000);
-        login.enterUserName("test0404@yopmail.com");
+        login.enterUserName("john0404@yopmail.com");
         login.enterPassword("123456");
         login.clickLogin();
         login.acceptAlert();

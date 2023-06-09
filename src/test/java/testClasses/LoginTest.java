@@ -30,7 +30,7 @@ public class LoginTest extends BaseTest {
         Hamburger hamburger = new Hamburger();
         login.launchApp();
         Thread.sleep(2000);
-        login.enterUserName("test0404@yopmail.com");
+        login.enterUserName("john0404@yopmail.com");
         login.enterPassword("123456");
         login.clickLogin();
         login.acceptAlert();
@@ -46,7 +46,7 @@ public class LoginTest extends BaseTest {
         Assertion ass = new Assertion();
         login.launchApp();
         Thread.sleep(2000);
-        login.enterUserName("test0404@yopmail.com");
+        login.enterUserName("john0404@yopmail.com");
         login.enterPassword("123456");
         login.clickLogin();
         login.closeAppLaunchApp();
@@ -72,7 +72,7 @@ public class LoginTest extends BaseTest {
         Login login = new Login();
         login.launchApp();
         Thread.sleep(2000);
-        login.enterUserName("test0404@yopmail.com");
+        login.enterUserName("john0404@yopmail.com");
         login.clickLogin();
         Assertion.assertEquals(login.getPassBlank_ValidationMessage(),BLANKPASS_TOASTMSG);
         login.closeApp();
@@ -97,7 +97,7 @@ public class LoginTest extends BaseTest {
         Login login = new Login();
         login.launchApp();
         Thread.sleep(2000);
-        login.enterUserName("test0404@yopmail.com");
+        login.enterUserName("john0404@yopmail.com");
         login.enterPassword("12456");
         login.clickLogin();
         Assertion.assertEquals(login.getValidationMessage(),ValidationMSG);
@@ -110,7 +110,7 @@ public class LoginTest extends BaseTest {
         Login login = new Login();
         login.launchApp();
         Thread.sleep(2000);
-        login.enterUserName("test0404@yopmail.com");
+        login.enterUserName("john0404@yopmail.com");
         login.enterPassword("1234567");
         login.clickShowPassword();
         Assertion.assertEquals(login.getValidationPWD(),ShowPWD);
@@ -124,7 +124,7 @@ public class LoginTest extends BaseTest {
         Login login = new Login();
         login.launchApp();
         Thread.sleep(2000);
-        login.enterUserName("test0404@yopmail.com");
+        login.enterUserName("john0404@yopmail.com");
         login.enterPassword("1234567");
         login.clickShowPassword();
         Thread.sleep(2000);

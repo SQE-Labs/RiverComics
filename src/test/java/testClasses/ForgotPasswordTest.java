@@ -79,7 +79,7 @@ public class ForgotPasswordTest extends BaseTest {
         login.launchApp();
         Thread.sleep(2000);
         login.clickForgotPassword();
-        login.enterForgetEmail("test0404@yopmail.com");
+        login.enterForgetEmail("john0404@yopmail.com");
         login.clickSubmitButton();
         Assertion.assertEquals(login.getPleaseCheckYourEmail(), CheckEMAILMSG);
         login.closeApp();
@@ -93,7 +93,7 @@ public class ForgotPasswordTest extends BaseTest {
         login.launchApp();
         Thread.sleep(2000);
         login.clickForgotPassword();
-        login.enterForgetEmail("test0404@yopmail.com");
+        login.enterForgetEmail("john0404@yopmail.com");
         login.clickSubmitButton();
         login.clickOkayPopup();
         login.closeApp();

@@ -9,8 +9,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 public class HomePage extends BasePage {
     private By rivercomicsLogo = By.id("com.river.comics.us:id/ivToolbarLogo");
 
-    //@AndroidFindBy(id = "com.river.comics.us:id/tvToolbarSubscribe")
-    private MobileElement subscribeBtn;
+
 
     @AndroidFindBy(id = "com.river.comics.us:id/ivToolbarLogo")
     private MobileElement logo;

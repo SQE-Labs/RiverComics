@@ -6,6 +6,7 @@
       <class name="testClasses.LoginTest"></class>
       <class name="testClasses.HumburgerMenuTest"></class>
       <class name="testClasses.ForgotPasswordTest"></class>
+      <class name="testClasses.PlanDetailPasswordTest"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
