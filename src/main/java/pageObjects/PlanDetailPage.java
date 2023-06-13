@@ -24,11 +24,13 @@ public class PlanDetailPage extends BasePage {
 
     public void clickSubscribeNow() throws InterruptedException {
         click(subscribeNow);
+        Thread.sleep(2000);
     }
 
     public String getSubscribeNOW() throws InterruptedException {
         Thread.sleep(4000);
         return getText(subscribeNow);
+
     }
 
 

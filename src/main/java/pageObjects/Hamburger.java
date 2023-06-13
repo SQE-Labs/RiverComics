@@ -192,7 +192,7 @@ public class Hamburger extends BasePage {
 
     public void clickLanguageSubTab() throws InterruptedException {
         click(langauageSubtab);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
     }
 
     public void clickDeviceList() throws InterruptedException {
@@ -251,7 +251,7 @@ public class Hamburger extends BasePage {
     }
 
     public boolean isEnglishLanguagePresent() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         return isElementPresent(selectEnglishLanguage);
     }
 

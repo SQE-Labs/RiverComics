@@ -22,7 +22,7 @@ public void UnsubscribedUser() throws Exception {
 	homePg.selectSeries();
 	seriesDtl.clickFavouriteIcon();
 	seriesDtl.clickRatingIcon();
-	seriesDtl.closeRating();
+	//seriesDtl.closeRating();
 	//seriesDtl.clickShareIcon();
 	//seriesDtl.clickShareIcon();
 	seriesDtl.clickSortingIcon();

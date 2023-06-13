@@ -22,7 +22,7 @@ public class SubscribedUserTest {
         homepage.selectSeries();
         seriesDtl.clickFavouriteIcon();
         seriesDtl.clickRatingIcon();
-        seriesDtl.closeRating();
+      //  seriesDtl.closeRating();
         //seriesDtl.clickShareIcon();
         //seriesDtl.clickShareIcon();
         seriesDtl.clickSortingIcon();
