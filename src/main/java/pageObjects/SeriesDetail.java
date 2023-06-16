@@ -33,6 +33,33 @@ public class SeriesDetail extends BasePage {
 
     private By submit = By.id("com.river.comics.us:id/btnSubmit");
 
+    private By introEpisode = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.ImageView");
+
+    private By atlantis = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.ImageView");
+
+    private By atlantisText = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView");
+
+    private By sort = By.id("com.river.comics.us:id/ivSort");
+
+    private By sortByNumber = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]");
+
+    private By shauryaText = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView");
+
+    private By issueCount = By.id("com.river.comics.us:id/issuesCount");
+
+
+    public String getIssueCountText() {
+        return getText(issueCount);
+    }
+
+    public String getShauryaText() {
+        return getText(shauryaText);
+    }
+
+    public String getAtlantisText() {
+        return getText(atlantisText);
+    }
+
     public String getIntroEpisodeText() {
         return getText(introEpisodeText);
     }
@@ -42,6 +69,23 @@ public class SeriesDetail extends BasePage {
         Thread.sleep(4000);
     }
 
+    public void clickSort() throws InterruptedException {
+        click(sort);
+        Thread.sleep(4000);
+    }
+
+    public void clickSortByDate() throws InterruptedException {
+        click(sortByDate);
+        Thread.sleep(4000);
+    }
+
+
+    public void clickSortByNumber() throws InterruptedException {
+        click(sortByNumber);
+        Thread.sleep(4000);
+    }
+
+
     public boolean isRatingCloseIconPresent() throws InterruptedException {
         Thread.sleep(2000);
         return isElementPresent(closeRatingPopUp);
@@ -49,6 +93,16 @@ public class SeriesDetail extends BasePage {
 
     public void clickShareIcon() throws InterruptedException {
         click(share);
+        Thread.sleep(2000);
+    }
+
+    public void clickIntroEpisodes() throws InterruptedException {
+        click(introEpisode);
+        Thread.sleep(4000);
+    }
+
+    public void clickAtlantis() throws InterruptedException {
+        click(atlantis);
         Thread.sleep(4000);
     }
 

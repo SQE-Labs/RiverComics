@@ -1,14 +1,48 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 129, Failures: 1, Errors: 0, Skipped: 128, Time elapsed: 4.517 s <<< FAILURE! - in TestSuite
-testClasses.ForgotPasswordTest.initialize  Time elapsed: 4.002 s  <<< FAILURE!
+Tests run: 128, Failures: 4, Errors: 0, Skipped: 105, Time elapsed: 465.058 s <<< FAILURE! - in TestSuite
+testClasses.UnsubscribedUserTest.UnsubscribedUser  Time elapsed: 4.058 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.29.70', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: 82f0bbb6-45f0-44a1-9859-850f4b956eae
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.UnsubscribedUserTest.UnsubscribedUser(UnsubscribedUserTest.java:21)
+
+testClasses.SubscribedUserTest.subscribedUser  Time elapsed: 4.085 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.29.70', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: 82f0bbb6-45f0-44a1-9859-850f4b956eae
+*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
+	at testClasses.SubscribedUserTest.subscribedUser(SubscribedUserTest.java:20)
+
+testClasses.HumburgerMenuTest.refreshPageOnTap  Time elapsed: 34.291 s  <<< FAILURE!
 org.openqa.selenium.WebDriverException: 
 An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.23', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
-    at UIA2Proxy.command (C:\Users\Itsqe\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
-    at processTicksAndRejections (internal/process/task_queues.js:85:5)
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.29.70', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: 82f0bbb6-45f0-44a1-9859-850f4b956eae
+*** Element info: {Using=xpath, value=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ProgressBar}
+	at testClasses.HumburgerMenuTest.refreshPageOnTap(HumburgerMenuTest.java:65)
+
+testClasses.HumburgerMenuTest.tearDown[[TestResult name=refreshPageOnTap status=FAILURE method=HumburgerMenuTest.refreshPageOnTap()[pri:21, instance:testClasses.HumburgerMenuTest@7f9fcf7f] output={null}]](0)  Time elapsed: 34.306 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.29.70', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
+Session ID: 82f0bbb6-45f0-44a1-9859-850f4b956eae
 

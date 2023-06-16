@@ -39,7 +39,7 @@ public class Hamburger extends BasePage {
 
     private By selectLanguage = By.id("com.river.comics.us:id/alertTitle");
 
-    private By selectEnglishLanguage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]");
+    private By selectEnglishLanguage = By.id("com.river.comics.us:id/tvLanguage");
 
     private By updateEmail = By.id("com.river.comics.us:id/tvUpdateEmail");
 
@@ -52,6 +52,8 @@ public class Hamburger extends BasePage {
     private By FAQs = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[9]");
 
     private By validateFAQs = By.id("com.river.comics.us:id/webView");
+
+    private By englishLanguage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]");
 
     private By changeLanguage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[7]/android.widget.TextView");
 
@@ -120,6 +122,7 @@ public class Hamburger extends BasePage {
         sendKeys(currentPassword, passText);
         Thread.sleep(2000);
     }
+
 
     public void enterConfirmPassword(String passText) throws InterruptedException {
         sendKeys(confirmNewPassword, passText);
@@ -246,7 +249,7 @@ public class Hamburger extends BasePage {
     }
 
     public void clickEnglishLanguage() throws InterruptedException {
-        click(selectEnglishLanguage);
+        click(englishLanguage);
         Thread.sleep(2000);
     }
 
@@ -262,7 +265,6 @@ public class Hamburger extends BasePage {
 
 
     public void clickHumburgerIcon() throws InterruptedException {
-        Thread.sleep(2000);
         click(humburgerIcon);
         Thread.sleep(2000);
     }

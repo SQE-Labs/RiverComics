@@ -17,12 +17,14 @@ public class CategoriesHomePageTest extends BaseTest {
     String PREVIEWS = "PREVIEWS";
     String LATEST_SERIES = "LATEST SERIES";
     String INTRO_EPISODE_TXT = "INTRO EPISODES";
+    String SHAURYA_TXT = "Shaurya";
+    String ATLANTIS_TXT = "Atlantis";
+    String ISSUE_COUNT = "Issues (16)";
 
     @Test(priority = 69, enabled = true, description = "Verify the UI of 'Home' page")
     public void verifyUIHomePage() throws Exception {
         Login login = new Login();
         HomePage HomePage = new HomePage();
-        Thread.sleep(2000);
         login.launchApp();
         login.LoginUser();
         Assertion.assertTrue(HomePage.isSubscribePresent());
@@ -151,7 +153,7 @@ public class CategoriesHomePageTest extends BaseTest {
     }
 
     //Rating are not updated so assertions are not added for now
-    @Test(priority = 77, enabled = true, description = "Verify that 'Series Details' page opens up AND Sharing popup should appear")
+    @Test(priority = 77, enabled = true, description = "Verify that 'Add Rating' popup appears after tapping on 'Star' icon")
     public void addRatingPopUpAppear_AND_RatingGetsUpdated() throws Exception {
         Login login = new Login();
         HomePage HomePage = new HomePage();
@@ -166,16 +168,54 @@ public class CategoriesHomePageTest extends BaseTest {
         login.closeApp();
     }
 
-
+    // TODO --- Assertion pending need to troubleshoot how to validate favourite Icon
     @Test(priority = 78, enabled = true, description = "Verify that 'Favorite icon gets filled with red color")
     public void verifyFavouriteIcon() throws Exception {
         Login login = new Login();
-        HomePage HomePage = new HomePage();
         SeriesDetail series = new SeriesDetail();
         Thread.sleep(2000);
         login.launchApp();
         login.LoginUser();
-        HomePage.clickFilter();
+        series.clickIntroEpisodes();
+        series.clickFavouriteIcon();
         login.closeApp();
+    }
+    // Not able find locators for READ MORE and READ LESS So we can not Automate
+    @Test(priority = 79, enabled = false, description = "Verify description should expand and Collpase")
+    public void verifyDescriptionExpandRead_AND_CollpaseRead() throws Exception {
+        Login login = new Login();
+        SeriesDetail series = new SeriesDetail();
+        login.launchApp();
+        login.LoginUser();
+        series.clickAtlantis();
+        login.closeApp();
+    }
+
+    @Test(priority = 80, enabled = true, description = "Verify that list of episode appears'Sort by date' AND Sort By Number option")
+    public void verifyPopUp_SortByNumber_AND_SortByDate() throws Exception {
+        Login login = new Login();
+        SeriesDetail series = new SeriesDetail();
+        login.launchApp();
+        login.LoginUser();
+        series.clickIntroEpisodes();
+        series.clickSort();
+        series.clickSortByDate();
+        Assertion.assertEquals(series.getAtlantisText(),ATLANTIS_TXT);
+        Thread.sleep(2000);
+        series.clickSort();
+        series.clickSortByNumber();
+        Assertion.assertEquals(series.getShauryaText(),SHAURYA_TXT);
+        login.closeApp();
+    }
+
+    @Test(priority = 81, enabled = true, description = "Verify that all episodes count appear in the 'Issues' section")
+    public void verify_IssueCount() throws Exception {
+        Login login = new Login();
+        SeriesDetail series = new SeriesDetail();
+        login.launchApp();
+        login.LoginUser();
+        series.clickIntroEpisodes();
+        Assertion.assertEquals(series.getIssueCountText(),ISSUE_COUNT);
+
     }
 }

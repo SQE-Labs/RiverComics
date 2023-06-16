@@ -94,7 +94,7 @@ public class HomePage extends BasePage {
 
     public void clickFilter() throws InterruptedException {
         click(filter);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     public void clickAllSeries() throws InterruptedException {

@@ -53,7 +53,7 @@ public class Login extends BasePage {
 
     public void enterUserName(String usernameTxt) throws InterruptedException {
         sendKeys(userName, usernameTxt);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     public void enterForgetEmail(String emailTxt) throws InterruptedException {
@@ -63,7 +63,7 @@ public class Login extends BasePage {
 
     public void enterPassword(String passwordTxt) throws InterruptedException {
         sendKeys(password, passwordTxt);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     public void clickLogin() throws InterruptedException {
@@ -108,13 +108,11 @@ public class Login extends BasePage {
     }
 
     public void closeApp() throws InterruptedException {
-        Thread.sleep(1000);
         DriverManager.getDriver().closeApp();
     }
 
     public void launchApp() throws InterruptedException {
         DriverManager.getDriver().launchApp();
-        Thread.sleep(1000);
     }
 
     public boolean validate_NoUser() throws InterruptedException {
@@ -182,7 +180,7 @@ public class Login extends BasePage {
     public void LoginUser() throws Exception {
         Login login = new Login();
         Hamburger hamburger = new Hamburger();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         login.enterUserName("john0404@yopmail.com");
         login.enterPassword("123456");
         login.clickLogin();

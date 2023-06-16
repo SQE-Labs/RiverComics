@@ -29,7 +29,6 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.LoginUser();
         hamburger.clickHumburgerIcon();
         Assertion.assertEquals(hamburger.getUserNameTXT(), UNSUB_USERNAME);
@@ -148,7 +147,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickShare();
-       // Assertion.assertTrue(Hamburger.isUserOnSharePage());
+        Assertion.assertTrue(Hamburger.isUserOnSharePage());
         login.closeApp();
 
     }
@@ -304,7 +303,7 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.enterNewEmail("john0404@yopmail.com");
         Hamburger.enterConfirmEmail("john0404@yopmail.com");
         Hamburger.clickSubmit();
-        //Assertion.assertEquals(Hamburger.getSameEmailValidationMsg(), SAME_EMAIL_MESSAGE);
+        Assertion.assertEquals(Hamburger.getSameEmailValidationMsg(), SAME_EMAIL_MESSAGE);
         login.closeApp();
 
     }
@@ -321,7 +320,7 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.enterCurrentEmail("john0404@yopmail.com");
         Hamburger.enterNewEmail("john0404@yopmail.com");
         Hamburger.clickSubmit();
-        //Assertion.assertEquals(Hamburger.getValidationMessageConfirmEmailBlank(), SAME_EMAIL_MESSAGE);
+        Assertion.assertEquals(Hamburger.getValidationMessageConfirmEmailBlank(), SAME_EMAIL_MESSAGE);
         login.closeApp();
 
     }
@@ -340,7 +339,7 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.enterConfirmEmail("test4332@yopmail.com");
         Hamburger.clickSubmit();
         login.closeApp();
-        //Assertion.assertEquals(Hamburger.getNewEmailValidationMessage(),DIFF_NEW_EMAIL);
+        Assertion.assertEquals(Hamburger.getNewEmailValidationMessage(),DIFF_NEW_EMAIL);
 
     }
 
@@ -441,7 +440,7 @@ public class HumburgerMenuTest extends BaseTest {
         hamburger.enterNewPassword("123456");
         hamburger.enterConfirmPassword("123456");
         hamburger.clickSubmitPassword();
-       //Assertion.assertEquals(hamburger.getTextPleaseEnterCurrentPassword(), CURRENTPASSWORD_TOAST_MSG);
+        Assertion.assertEquals(hamburger.getTextPleaseEnterCurrentPassword(), PASS_CHANGE_SUCCESS_TXT);
         login.closeApp();
     }
 
@@ -460,7 +459,7 @@ public class HumburgerMenuTest extends BaseTest {
         hamburger.enterNewPassword("123456");
         hamburger.enterConfirmPassword("123456");
         hamburger.clickSubmitPassword();
-        //Assertion.assertEquals(hamburger.getTextPleaseEnterCurrentPassword(), CURRENTPASSWORD_TOAST_MSG);
+        Assertion.assertEquals(hamburger.getTextPleaseEnterCurrentPassword(), PASS_CHANGE_SUCCESS_TXT);
         login.closeApp();
     }
 
@@ -533,6 +532,7 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.enterNewPassword("1234");
         Hamburger.enterConfirmPassword("1232");
         Hamburger.clickSubmitPassword();
+        login.closeApp();
 
     }
 
@@ -550,6 +550,7 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.enterCurrentPassword("1234567");
         Hamburger.enterNewPassword("1234");
         Hamburger.clickSubmitPassword();
+        login.closeApp();
     }
 
     //153 - 154
@@ -578,6 +579,7 @@ public class HumburgerMenuTest extends BaseTest {
 //        login.enterPassword("1234567");
 //        login.clickLogin();
 //        login.acceptAlert();
+        login.closeApp();
     }
 
     //155
@@ -609,7 +611,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //157 --- This test case cannot be automated due to sign up functionality can not be done because of captcha issue.
-    @Test(priority = 55, enabled = false, description = "Verify that account deleted successfully")
+    @Test(priority = 55, enabled = true, description = "Verify that account deleted successfully")
     public void delete_Success() throws Exception {
         Hamburger hamburger = new Hamburger();
         Login login = new Login();
@@ -621,7 +623,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //158  --- This test case cannot be automated due to sign up functionality can not be done because of captcha issue.
-    @Test(priority = 56, enabled = false, description = "Verify that when user tries to login with deleted account's credentials")
+    @Test(priority = 56, enabled = true, description = "Verify that when user tries to login with deleted account's credentials")
     public void loginWith_Deleted_Account() throws Exception {
         Login login = new Login();
         login.launchApp();
@@ -655,7 +657,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickContactUs();
-        //Assertion.assertTrue(Humburger.isContactUsTabPresent());
+        Assertion.assertTrue(Hamburger.isContactUsTabPresent());
         login.closeApp();
 
     }
@@ -682,7 +684,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickLogout();
-      //  Assertion.assertEquals(Hamburger.getLogOutText(),AREYOUSURE_LOGOUT);
+        Assertion.assertEquals(Hamburger.getLogOutText(),AREYOUSURE_LOGOUT);
         login.closeApp();
 
 
@@ -710,7 +712,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickPrivacyPolicy();
-       // Assertion.assertTrue(Hamburger.isPrivacyPolicyContainerPresent());
+        Assertion.assertTrue(Hamburger.isPrivacyPolicyContainerPresent());
         login.closeApp();
 
     }
@@ -724,7 +726,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickTermsAndConditions();
-        //Assertion.assertTrue(Hamburger.istermsAndConditionContainerPresent());
+        Assertion.assertTrue(Hamburger.istermsAndConditionContainerPresent());
         login.closeApp();
 
 

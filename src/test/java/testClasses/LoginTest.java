@@ -36,7 +36,7 @@ public class LoginTest extends BaseTest {
         login.acceptAlert();
         login.closeAppLaunchApp();
         Thread.sleep(2000);
-       // Assertion.assertTrue(login.isLoginButtonPresent());
+        Assertion.assertTrue(login.isLoginButtonPresent());
         login.closeApp();
 
     }
