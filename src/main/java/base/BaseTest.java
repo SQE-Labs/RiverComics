@@ -74,7 +74,7 @@ public void initialize() throws Exception {
         extent.endTest(extentTest);
         extent.flush();
         //getDriver().navigate().refresh();
-    }
+       }
 @AfterSuite
 public void quit() {
     DriverManager driverManager=new DriverManager();

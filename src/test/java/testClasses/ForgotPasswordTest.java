@@ -17,7 +17,6 @@ public class ForgotPasswordTest extends BaseTest {
     public void forgetPasswordPageOpensUp() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.clickForgotPassword();
         Assertion.assertTrue(login.isSubmitButtonPresent());
         login.closeApp();
@@ -28,7 +27,6 @@ public class ForgotPasswordTest extends BaseTest {
     public void EmailField_Blank() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.clickForgotPassword();
         login.clickSubmitButton();
         Assertion.assertEquals(login.getToastMessage(), ToastMSG);
@@ -39,7 +37,6 @@ public class ForgotPasswordTest extends BaseTest {
     public void enterspaces_EmailField() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.clickForgotPassword();
         login.enterForgetEmail("     ");
         login.clickSubmitButton();
@@ -51,7 +48,6 @@ public class ForgotPasswordTest extends BaseTest {
     public void invalidEmail() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.clickForgotPassword();
         login.enterForgetEmail("ewafgdsa");
         login.clickSubmitButton();
@@ -64,7 +60,6 @@ public class ForgotPasswordTest extends BaseTest {
     public void unregisteredEmail() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.clickForgotPassword();
         login.enterForgetEmail("test7613@yopmail.com");
         login.clickSubmitButton();
@@ -77,7 +72,6 @@ public class ForgotPasswordTest extends BaseTest {
     public void registeredEmail() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.clickForgotPassword();
         login.enterForgetEmail("john0404@yopmail.com");
         login.clickSubmitButton();
@@ -91,7 +85,6 @@ public class ForgotPasswordTest extends BaseTest {
     public void validateEmailReceived() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.clickForgotPassword();
         login.enterForgetEmail("john0404@yopmail.com");
         login.clickSubmitButton();

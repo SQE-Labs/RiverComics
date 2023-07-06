@@ -29,8 +29,8 @@ public class LoginTest extends BaseTest {
         Login login = new Login();
         Hamburger hamburger = new Hamburger();
         login.launchApp();
-        Thread.sleep(2000);
         login.enterUserName("john0404@yopmail.com");
+        Thread.sleep(1000);
         login.enterPassword("123456");
         login.clickLogin();
         login.acceptAlert();
@@ -46,7 +46,7 @@ public class LoginTest extends BaseTest {
         Login login = new Login();
         Assertion ass = new Assertion();
         login.launchApp();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         login.enterUserName("john0404@yopmail.com");
         login.enterPassword("123456");
         login.clickLogin();
@@ -60,7 +60,6 @@ public class LoginTest extends BaseTest {
     public void userName_Field_Blank() throws InterruptedException {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.enterPassword("123456");
         login.clickLogin();
         Assertion.assertEquals(login.getUserBlank_ValidationMessage(),BLANKUSER_TOASTMSG);
@@ -72,7 +71,6 @@ public class LoginTest extends BaseTest {
     public void password_Field_Blank() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.enterUserName("john0404@yopmail.com");
         login.clickLogin();
         Assertion.assertEquals(login.getPassBlank_ValidationMessage(),BLANKPASS_TOASTMSG);
@@ -85,7 +83,6 @@ public class LoginTest extends BaseTest {
         Assertion ass = new Assertion();
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.enterUserName("testeyeud04@yopmail.com");
         login.enterPassword("123456");
         login.clickLogin();
@@ -97,7 +94,6 @@ public class LoginTest extends BaseTest {
     public void invalid_Password_Login() throws Exception {
         Login login = new Login();
         login.launchApp();
-        Thread.sleep(2000);
         login.enterUserName("john0404@yopmail.com");
         login.enterPassword("12456");
         login.clickLogin();
@@ -142,6 +138,7 @@ public class LoginTest extends BaseTest {
         login.enterUserName("test7613@yopmail.com");
         login.enterPassword("1234567");
         login.clickLogin();
+        Thread.sleep(2000);
         Assertion.assertEquals(login.getValidationMessage(),ValidationMSG);
         login.closeApp();
 

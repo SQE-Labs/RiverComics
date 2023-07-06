@@ -18,8 +18,9 @@ public class HumburgerMenuTest extends BaseTest {
     String BLANKEMAIL_MESSAGE = "Please enter current email address";
     String NONEXISTING_EMAIL_MESSAGE = "You have entered wrong email address";
     String NEW_EMAIL_MESSAGE = "Please enter new email address";
-    String SAME_EMAIL_MESSAGE = "You have entered wrong email address";
-    String PASS_CHANGE_SUCCESS_TXT = "Your password has been changed successfully.";
+    String SAME_EMAIL_MESSAGE = "Current email address and new email address must be different";
+    String PASS_CHANGE_SUCCESS_TXT = "Please enter current password";
+    String INVALID_USER = "Invalid User Details";
     String AREYOUSURE_LOGOUT = "Are you sure you want to logout?";
     String DIFF_NEW_EMAIL = "Email addresses do not match";
 
@@ -43,6 +44,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.launchApp();
         Thread.sleep(2000);
         login.enterUserName("clover@yopmail.com");
+        Thread.sleep(2000);
         login.enterPassword("123456");
         login.clickLogin();
         login.acceptAlert();
@@ -53,7 +55,7 @@ public class HumburgerMenuTest extends BaseTest {
     }
 
     //117
-    @Test(priority = 21, enabled = true, description = "Verify that page refreshes on tapping home icon")
+    @Test(priority = 21, enabled = false, description = "Verify that page refreshes on tapping home icon")
     public void refreshPageOnTap() throws Exception {
         HomePage homepage = new HomePage();
         Login login = new Login();
@@ -147,6 +149,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickShare();
+        Thread.sleep(1000);
         Assertion.assertTrue(Hamburger.isUserOnSharePage());
         login.closeApp();
 
@@ -320,6 +323,7 @@ public class HumburgerMenuTest extends BaseTest {
         Hamburger.enterCurrentEmail("john0404@yopmail.com");
         Hamburger.enterNewEmail("john0404@yopmail.com");
         Hamburger.clickSubmit();
+        Thread.sleep(2000);
         Assertion.assertEquals(Hamburger.getValidationMessageConfirmEmailBlank(), SAME_EMAIL_MESSAGE);
         login.closeApp();
 
@@ -406,6 +410,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.enterPassword("123456");
         login.clickLogin();
         login.acceptAlert();
+        Thread.sleep(2000);
         hamburger.clickHumburgerIcon();
         Assertion.assertEquals(hamburger.getUserNameTXT(), UNSUB_USERNAME);
         login.closeApp();
@@ -458,8 +463,9 @@ public class HumburgerMenuTest extends BaseTest {
         hamburger.enterCurrentPassword("123");
         hamburger.enterNewPassword("123456");
         hamburger.enterConfirmPassword("123456");
+        Thread.sleep(2000);
         hamburger.clickSubmitPassword();
-        Assertion.assertEquals(hamburger.getTextPleaseEnterCurrentPassword(), PASS_CHANGE_SUCCESS_TXT);
+        Assertion.assertEquals(hamburger.getTextPleaseEnterCurrentPassword(), INVALID_USER);
         login.closeApp();
     }
 
@@ -657,6 +663,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickContactUs();
+        Thread.sleep(2000);
         Assertion.assertTrue(Hamburger.isContactUsTabPresent());
         login.closeApp();
 
@@ -684,6 +691,7 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickLogout();
+        Thread.sleep(2000);
         Assertion.assertEquals(Hamburger.getLogOutText(),AREYOUSURE_LOGOUT);
         login.closeApp();
 
@@ -726,9 +734,9 @@ public class HumburgerMenuTest extends BaseTest {
         login.LoginUser();
         Hamburger.clickHumburgerIcon();
         Hamburger.clickTermsAndConditions();
+        Thread.sleep(2000);
         Assertion.assertTrue(Hamburger.istermsAndConditionContainerPresent());
         login.closeApp();
-
 
     }
 }

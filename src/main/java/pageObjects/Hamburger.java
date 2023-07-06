@@ -174,7 +174,7 @@ public class Hamburger extends BasePage {
 
     public void clickTermsAndConditions() throws InterruptedException {
         click(termsAndCondtions);
-        Thread.sleep(15000);
+        Thread.sleep(10000);
     }
 
 
@@ -225,7 +225,6 @@ public class Hamburger extends BasePage {
 
     public void enterNewEmail(String emailText) throws InterruptedException {
         sendKeys(newEmail, emailText);
-        Thread.sleep(2000);
     }
 
     public void enterCurrentEmail(String emailText) throws InterruptedException {
@@ -266,7 +265,6 @@ public class Hamburger extends BasePage {
 
     public void clickHumburgerIcon() throws InterruptedException {
         click(humburgerIcon);
-        Thread.sleep(2000);
     }
 
     public void clickUpdateEmail() throws InterruptedException {
@@ -282,7 +280,6 @@ public class Hamburger extends BasePage {
 
     public void clickShare() throws InterruptedException {
         click(shareTab);
-        Thread.sleep(2000);
     }
 
     public void clickSearch() throws InterruptedException {
@@ -448,6 +445,7 @@ public class Hamburger extends BasePage {
 
     public void clickContactUs() throws InterruptedException {
         click(contactUs);
+
     }
 
 }

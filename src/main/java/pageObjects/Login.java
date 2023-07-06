@@ -44,7 +44,7 @@ public class Login extends BasePage {
 
     private By userNotFoundToastMSG = By.xpath("/hierarchy/android.widget.Toast");
 
-    private By pleaseCheckYourEmail = By.id("android:id/message");
+    private By pleaseCheckYourEmail = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView");
 
     private By userblankToastMsg = By.xpath("/hierarchy/android.widget.Toast");
 
@@ -185,7 +185,7 @@ public class Login extends BasePage {
         login.enterPassword("123456");
         login.clickLogin();
         login.acceptAlert();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     public void subscriberUserLogin() throws Exception {
