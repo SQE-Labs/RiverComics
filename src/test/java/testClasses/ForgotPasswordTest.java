@@ -77,7 +77,6 @@ public class ForgotPasswordTest extends BaseTest {
         login.clickSubmitButton();
         Assertion.assertEquals(login.getPleaseCheckYourEmail(), CheckEMAILMSG);
         login.closeApp();
-
     }
 
     //TODO --- How to validate email on Appium

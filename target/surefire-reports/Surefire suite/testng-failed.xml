@@ -3,6 +3,21 @@
 <suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
   <test name="Surefire test(failed)">
     <classes>
+      <class name="testClasses.ForgotPasswordTest">
+        <methods>
+          <include name="invalidEmail"/>
+          <include name="enterspaces_EmailField"/>
+          <include name="initialize"/>
+          <include name="validateEmailReceived"/>
+          <include name="registeredEmail"/>
+          <include name="tearDown"/>
+          <include name="beforeMethod"/>
+          <include name="forgetPasswordPageOpensUp"/>
+          <include name="unregisteredEmail"/>
+          <include name="EmailField_Blank"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- testClasses.ForgotPasswordTest -->
       <class name="testClasses.SubscribedUserTest">
         <methods>
           <include name="subscribedUser"/>
@@ -26,8 +41,10 @@
           <include name="verifyFavouriteIcon"/>
           <include name="beforeMethod"/>
           <include name="verifyIntroEpisodes_ComingSoon"/>
+          <include name="verify_IssueCount"/>
           <include name="selectCategoryPopup_Closed"/>
           <include name="addRatingPopUpAppear_AND_RatingGetsUpdated"/>
+          <include name="verifyPopUp_SortByNumber_AND_SortByDate"/>
           <include name="seriesDetailPageOpensUp_AND_sharingPopUpAppear"/>
           <include name="tearDown"/>
           <include name="allSeries_Appear"/>
@@ -50,6 +67,7 @@
           <include name="lessThan6_Character_InUpdatePassword"/>
           <include name="enterValidDetailsIn_AllUpdateEmail"/>
           <include name="updatedEmail_UnderLOGO"/>
+          <include name="validateSubscribe_UsernameLogo"/>
           <include name="contactUsOpensUp"/>
           <include name="currentPasswordBlank_InUpdatePasswordSubtab"/>
           <include name="invalidPassword_InCurrentPassword"/>
@@ -65,13 +83,13 @@
           <include name="selectLanugauge_OpensUp"/>
           <include name="updatePasswordSubtab_OpensUp"/>
           <include name="differentEmail_InNewEmailConfirmEmail"/>
-          <include name="refreshPageOnTap"/>
           <include name="loginWith_UpdatedEmail"/>
           <include name="searchTab_OpensUp"/>
           <include name="termsAndConditioN"/>
           <include name="AlreadyRegistered_InAllFields"/>
           <include name="deletePopUp_OpensUp"/>
           <include name="updateEmail_OpensUp"/>
+          <include name="delete_Success"/>
           <include name="samePassword_InCurrentandNewPassword"/>
           <include name="initialize"/>
           <include name="selectLanguagePopUpOpensUp"/>
@@ -82,8 +100,10 @@
           <include name="validateTabs_SubscribeSearchFavourite"/>
           <include name="beforeMethod"/>
           <include name="log_OuT_Success"/>
+          <include name="validateUnsubscribe_UsernameLogo"/>
           <include name="NonExistingOrInvalidEmail_InUpdatedEmail"/>
           <include name="loginWith_Deleted_Account"/>
+          <include name="FAQs"/>
           <include name="privacy_PoLicy"/>
           <include name="updateEmailWith_NewEmailBlank"/>
           <include name="sharePage_PopUpOpensUp"/>
@@ -94,6 +114,25 @@
           <include name="quit"/>
         </methods>
       </class> <!-- testClasses.HumburgerMenuTest -->
+      <class name="testClasses.LoginTest">
+        <methods>
+          <include name="decrypted_Password"/>
+          <include name="initialize"/>
+          <include name="valid_Login"/>
+          <include name="beforeMethod"/>
+          <include name="password_Field_Blank"/>
+          <include name="non_Registered_Email"/>
+          <include name="encrypted_Password"/>
+          <include name="deleted_Account_Login"/>
+          <include name="launchApp_already_LoggedIn_User"/>
+          <include name="NoUser_Login"/>
+          <include name="tearDown"/>
+          <include name="invalid_Username_Login"/>
+          <include name="userName_Field_Blank"/>
+          <include name="quit"/>
+          <include name="invalid_Password_Login"/>
+        </methods>
+      </class> <!-- testClasses.LoginTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->
