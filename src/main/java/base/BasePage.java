@@ -15,7 +15,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utilities.DriverManager;
 
 public class BasePage {
-    public AppiumDriver<AndroidElement> driver;
+    public AppiumDriver driver;
 	public final long EXPLICIT_WAIT=10;
 	public BasePage() {
 		this.driver=DriverManager.getDriver();

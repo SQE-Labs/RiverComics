@@ -2,6 +2,7 @@ package base;
 
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -20,6 +21,8 @@ import org.testng.annotations.Parameters;
 import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException;
 import utilities.DriverManager;
@@ -27,6 +30,7 @@ import utilities.DriverManager;
 public class BaseTest {
 	
 	private static AppiumDriverLocalService server;
+	AndroidDriver  driver;
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -49,23 +53,26 @@ public class BaseTest {
         DesiredCapabilities cap = new DesiredCapabilities();
        
         cap.setCapability("platformName", "Android");
-        cap.setCapability("deviceName", "Nexus 5 API 30");
+        cap.setCapability("deviceName", "Anurag");
         cap.setCapability("platformVersion", "11.0");
-        cap.setCapability("automationName", "Appium");
-        cap.setCapability("app", "C:\\Users\\Itsqe\\eclipse-workspace\\AppiumRiverComics\\RiverComicsAPK\\base.apk");
+        cap.setCapability("automationName", "UiAutomator2");
+        cap.setCapability("app", "D:\\RC\\RiverComics\\apk\\base.apk");
+        //cap.setChromedriverExecutable("C:\\Users\\SQE Labs\\Downloads\\chromedriver_win32\\chromedriver.exe");
    //  cap.setCapability("appPackage","com.river.comics.us");
    //cap.setCapability("appActivity","com.ui.user.login.LoginActivity");
      
 
-		AndroidDriver  driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+		  driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 		DriverManager.setDriver(driver);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 		
 	}
 
-	@AfterClass
-	public void afterClass() {
-		DriverManager.getDriver().quit();
-	}
+//	@AfterClass
+//	public void afterClass() {
+//		DriverManager.getDriver().quit();
+//	}
 
 	public void closeApp() {
 		((InteractsWithApps) DriverManager.getDriver()).closeApp();
@@ -94,6 +101,22 @@ public class BaseTest {
 	public void afterSuite() {
 	//	server.stop();
 		//TestUtils.log().debug("Appium Server stopped.............");
+	}
+	
+	public void hideKeyboard()
+	{
+	driver.hideKeyboard();
+	}
+	
+	public void pressBackButton()
+	{
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+	//driver.pressKey(new KeyEvent(AndroidKey.));
+	}
+	public void pressEnterKey()
+	{
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+	//driver.pressKey(new KeyEvent(AndroidKey.));
 	}
 
 
