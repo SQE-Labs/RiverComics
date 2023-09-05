@@ -3,35 +3,6 @@
 <suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
   <test name="Surefire test(failed)">
     <classes>
-      <class name="testClasses.ForgotPasswordTest">
-        <methods>
-          <include name="invalidEmail"/>
-          <include name="enterspaces_EmailField"/>
-          <include name="initialize"/>
-          <include name="validateEmailReceived"/>
-          <include name="registeredEmail"/>
-          <include name="tearDown"/>
-          <include name="beforeMethod"/>
-          <include name="forgetPasswordPageOpensUp"/>
-          <include name="unregisteredEmail"/>
-          <include name="EmailField_Blank"/>
-          <include name="quit"/>
-        </methods>
-      </class> <!-- testClasses.ForgotPasswordTest -->
-      <class name="testClasses.SubscribedUserTest">
-        <methods>
-          <include name="subscribedUser"/>
-        </methods>
-      </class> <!-- testClasses.SubscribedUserTest -->
-      <class name="testClasses.UnsubscribedUserTest">
-        <methods>
-          <include name="initialize"/>
-          <include name="UnsubscribedUser"/>
-          <include name="tearDown"/>
-          <include name="beforeMethod"/>
-          <include name="quit"/>
-        </methods>
-      </class> <!-- testClasses.UnsubscribedUserTest -->
       <class name="testClasses.CategoriesHomePageTest">
         <methods>
           <include name="verifyUIHomePage"/>
@@ -52,6 +23,45 @@
           <include name="verifyFavouriteAndSearchIcon_WithSubscribedUser"/>
         </methods>
       </class> <!-- testClasses.CategoriesHomePageTest -->
+      <class name="testClasses.LoginTest">
+        <methods>
+          <include name="decrypted_Password"/>
+          <include name="initialize"/>
+          <include name="valid_Login"/>
+          <include name="beforeMethod"/>
+          <include name="password_Field_Blank"/>
+          <include name="non_Registered_Email"/>
+          <include name="encrypted_Password"/>
+          <include name="deleted_Account_Login"/>
+          <include name="launchApp_already_LoggedIn_User"/>
+          <include name="NoUser_Login"/>
+          <include name="tearDown"/>
+          <include name="invalid_Username_Login"/>
+          <include name="userName_Field_Blank"/>
+          <include name="quit"/>
+          <include name="invalid_Password_Login"/>
+        </methods>
+      </class> <!-- testClasses.LoginTest -->
+      <class name="testClasses.SubscribedUserTest">
+        <methods>
+          <include name="subscribedUser"/>
+        </methods>
+      </class> <!-- testClasses.SubscribedUserTest -->
+      <class name="testClasses.ForgotPasswordTest">
+        <methods>
+          <include name="invalidEmail"/>
+          <include name="enterspaces_EmailField"/>
+          <include name="initialize"/>
+          <include name="validateEmailReceived"/>
+          <include name="registeredEmail"/>
+          <include name="tearDown"/>
+          <include name="beforeMethod"/>
+          <include name="forgetPasswordPageOpensUp"/>
+          <include name="unregisteredEmail"/>
+          <include name="EmailField_Blank"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- testClasses.ForgotPasswordTest -->
       <class name="testClasses.PlanDetailPasswordTest">
         <methods>
           <include name="paymentsPage_OpensUp"/>
@@ -114,25 +124,15 @@
           <include name="quit"/>
         </methods>
       </class> <!-- testClasses.HumburgerMenuTest -->
-      <class name="testClasses.LoginTest">
+      <class name="testClasses.UnsubscribedUserTest">
         <methods>
-          <include name="decrypted_Password"/>
           <include name="initialize"/>
-          <include name="valid_Login"/>
-          <include name="beforeMethod"/>
-          <include name="password_Field_Blank"/>
-          <include name="non_Registered_Email"/>
-          <include name="encrypted_Password"/>
-          <include name="deleted_Account_Login"/>
-          <include name="launchApp_already_LoggedIn_User"/>
-          <include name="NoUser_Login"/>
+          <include name="UnsubscribedUser"/>
           <include name="tearDown"/>
-          <include name="invalid_Username_Login"/>
-          <include name="userName_Field_Blank"/>
+          <include name="beforeMethod"/>
           <include name="quit"/>
-          <include name="invalid_Password_Login"/>
         </methods>
-      </class> <!-- testClasses.LoginTest -->
+      </class> <!-- testClasses.UnsubscribedUserTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

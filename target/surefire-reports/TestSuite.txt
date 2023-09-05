@@ -1,14 +1,22 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 157, Failures: 1, Errors: 0, Skipped: 156, Time elapsed: 68.126 s <<< FAILURE! - in TestSuite
-testClasses.CategoriesHomePageTest.initialize  Time elapsed: 67.159 s  <<< FAILURE!
-org.openqa.selenium.WebDriverException: 
-An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.river.comics.us' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'com.ui.splash.SplashActivity' or 'com.river.comics.us.com.ui.splash.SplashActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+Tests run: 157, Failures: 1, Errors: 0, Skipped: 156, Time elapsed: 1.276 s <<< FAILURE! - in TestSuite
+testClasses.CategoriesHomePageTest.initialize  Time elapsed: 0.877 s  <<< FAILURE!
+org.openqa.selenium.InvalidArgumentException: 
+'automationName' can't be blank
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+System info: host: 'ankit-gupta', ip: '192.168.1.31', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.river.comics.us' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'com.ui.splash.SplashActivity' or 'com.river.comics.us.com.ui.splash.SplashActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-    at getResponseForW3CError (C:\Users\Itsqe\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\Itsqe\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+remote stacktrace: InvalidArgumentError: 'automationName' can't be blank
+    at processCapabilities (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\capabilities.js:345:13)
+    at parseCapsForInnerDriver (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\lib\utils.js:151:40)
+    at AppiumDriver.createSession (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\lib\appium.js:279:49)
+    at commandExecutor (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\driver.ts:107:18)
+    at AppiumDriver.executeCommand (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\driver.ts:124:15)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at defaultBehavior (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\lib\appium.js:718:16)
+    at AppiumDriver.executeWrappedCommand (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\lib\appium.js:828:16)
+    at AppiumDriver.executeCommand (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\lib\appium.js:734:17)
+    at asyncHandler (C:\Users\SQE Labs\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:393:19)
 

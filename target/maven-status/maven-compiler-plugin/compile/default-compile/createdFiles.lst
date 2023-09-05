@@ -1,3 +1,4 @@
+listeners\TestReporter.class
 pageObjects\Subscribe.class
 utilities\DriverManager.class
 pageObjects\HomePage.class
@@ -18,4 +19,5 @@ utilities\GlobalParams.class
 utilities\Screenshot.class
 pageObjects\Setting.class
 pageObjects\VideoPlay.class
+listeners\TestRunListener.class
 pageObjects\ReadPage.class

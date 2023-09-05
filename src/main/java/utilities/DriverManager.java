@@ -5,9 +5,10 @@ import java.net.URL;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.ios.IOSDriver;
 
-public  class DriverManager {
+public class DriverManager {
 	private static ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
 
 	GlobalParams params = new GlobalParams();
@@ -17,13 +18,12 @@ public  class DriverManager {
 	public DriverManager() {
 	}
 
-
 	public static AppiumDriver getDriver() {
 		return driver.get();
 	}
 
 	public static void setDriver(AppiumDriver driverref) {
-		driver.set(driverref);
+		driver.set((AndroidDriver) driverref);
 	}
 
 	public static void unload() {
@@ -33,35 +33,22 @@ public  class DriverManager {
 //GenericUtility utils = new GenericUtility();
 
 	public void initializeDriver() throws Exception {
-		AppiumDriver driver = null;
+		AndroidDriver driver = null;
 		GlobalParams params = new GlobalParams();
 
 		PropertyManager props = new PropertyManager();
-URL url =new URL("http://127.0.0.1:4723/wd/hub");
+		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		if (driver == null) {
-			try {
-				// utils.log().info("initializing Appium driver");
-//				switch (params.getPlatformName()) {
-//				case "Android":
-//					driver = new AndroidDriver(url, new CapabilitiesManager().getCaps());
-//					break;
-//				case "iOS":
-//					driver = new IOSDriver(url,new CapabilitiesManager().getCaps());
-//					break;
-//				}
-//				if (driver == null) {
-//					throw new Exception("driver is null. ABORT!!!");
-//				}
-				// utils.log().info("Driver is initialized");
-				driver = new AndroidDriver(url, new CapabilitiesManager().getCaps());
-//				break;
-				this.driver.set(driver);
-			} catch (IOException e) {
-				e.printStackTrace();
-				// utils.log().fatal("Driver initialization failure. ABORT !!!!" +
-				// e.toString());
-				throw e;
-			}
+			//
+			UiAutomator2Options options = new UiAutomator2Options();
+			options.setDeviceName("Anurag");
+			options.setApp("D:\\RiverComicsMobile\\base.apk");
+			options.setChromedriverExecutable("C:\\Users\\SQE Labs\\Downloads\\chromedriver_win32\\chromedriver.exe");
+			driver = new AndroidDriver(url, options);
+			// driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+
+			// break;
+			this.driver.set(driver);
 		}
 	}
 }

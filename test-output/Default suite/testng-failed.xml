@@ -5,15 +5,21 @@
     <classes>
       <class name="testClasses.LoginTest">
         <methods>
-          <include name="validate_Invalid_Username_Login"/>
-          <include name="validate_show_hide_passwordLogin"/>
-          <include name="validate_Login"/>
           <include name="quit"/>
+          <include name="valid_Login"/>
+          <include name="deleted_Account_Login"/>
+          <include name="password_Field_Blank"/>
+          <include name="non_Registered_Email"/>
+          <include name="tearDown"/>
+          <include name="userName_Field_Blank"/>
           <include name="launchApp_already_LoggedIn_User"/>
-          <include name="validate_Invalid_Password_Login"/>
-          <include name="validate_UserName_Field_Blank"/>
+          <include name="beforeMethod"/>
+          <include name="NoUser_Login"/>
+          <include name="invalid_Password_Login"/>
+          <include name="invalid_Username_Login"/>
+          <include name="encrypted_Password"/>
           <include name="initialize"/>
-          <include name="validate_Password_Field_Blank"/>
+          <include name="decrypted_Password"/>
         </methods>
       </class> <!-- testClasses.LoginTest -->
     </classes>

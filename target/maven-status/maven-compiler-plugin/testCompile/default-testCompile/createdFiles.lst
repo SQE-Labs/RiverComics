@@ -1,1 +1,7 @@
+testClasses\ForgotPasswordTest.class
+testClasses\PlanDetailPasswordTest.class
+testClasses\HumburgerMenuTest.class
+testClasses\SubscribedUserTest.class
+testClasses\CategoriesHomePageTest.class
+testClasses\UnsubscribedUserTest.class
 testClasses\LoginTest.class

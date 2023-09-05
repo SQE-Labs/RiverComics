@@ -1,164 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="0" failed="7" skipped="0">
+<testng-results ignored="0" total="11" passed="0" failed="0" skipped="11">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-09T12:58:19 IST" name="Default suite" finished-at="2023-05-09T12:58:31 IST" duration-ms="12317">
+  <suite started-at="2023-09-01T15:19:14 IST" name="Default suite" finished-at="2023-09-01T15:19:14 IST" duration-ms="84">
     <groups>
     </groups>
-    <test started-at="2023-05-09T12:58:19 IST" name="Default test" finished-at="2023-05-09T12:58:31 IST" duration-ms="12317">
+    <test started-at="2023-09-01T15:19:14 IST" name="Default test" finished-at="2023-09-01T15:19:14 IST" duration-ms="84">
       <class name="testClasses.LoginTest">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:19 IST" name="initialize" finished-at="2023-05-09T12:58:30 IST" duration-ms="11489" status="PASS">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="initialize" finished-at="2023-09-01T15:19:14 IST" duration-ms="24" status="FAIL">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="validate_Login()[pri:0, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:30 IST" name="validate_Login" description="Verify that user is able to login successfully" finished-at="2023-05-09T12:58:31 IST" duration-ms="311" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:64)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:59)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:218)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:51)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at base.BasePage.sendKeys(BasePage.java:65)
-at pageObjects.Login.enterUserName(Login.java:21)
-at testClasses.LoginTest.validate_Login(LoginTest.java:12)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754420" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validate_Login -->
-        <test-method signature="launchApp_already_LoggedIn_User()[pri:1, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:31 IST" name="launchApp_already_LoggedIn_User" description="Verify that &#039;Home&#039; page opens up, when user has already logged into the application." finished-at="2023-05-09T12:58:31 IST" duration-ms="121" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="NoUser_Login()[pri:1, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="NoUser_Login" description="Verify that no user is logged into the application" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}]]>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:64)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:59)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:218)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:51)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at base.BasePage.sendKeys(BasePage.java:65)
-at pageObjects.Login.enterUserName(Login.java:21)
-at testClasses.LoginTest.launchApp_already_LoggedIn_User(LoginTest.java:20)
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
 at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -169,78 +88,148 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NoUser_Login -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754425" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754430" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="valid_Login()[pri:2, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="valid_Login" description="Verify that user is able to login successfully" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- valid_Login -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754434" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754436" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="launchApp_already_LoggedIn_User()[pri:3, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="launchApp_already_LoggedIn_User" description="Verify that &#039;Home&#039; page opens up, when user has already logged into the application." finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp_already_LoggedIn_User -->
-        <test-method signature="validate_UserName_Field_Blank()[pri:2, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:31 IST" name="validate_UserName_Field_Blank" description="Verify that validation message appears, when &#039;Email&#039; field is left blank" finished-at="2023-05-09T12:58:31 IST" duration-ms="101" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754439" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="userName_Field_Blank()[pri:4, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="userName_Field_Blank" description="Verify that validation message appears,when &#039;Email&#039; field is left blank" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etPassword}]]>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etPassword}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:64)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:59)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:218)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:51)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at base.BasePage.sendKeys(BasePage.java:65)
-at pageObjects.Login.enterPassword(Login.java:25)
-at testClasses.LoginTest.validate_UserName_Field_Blank(LoginTest.java:33)
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
 at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -251,78 +240,52 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validate_UserName_Field_Blank -->
-        <test-method signature="validate_Password_Field_Blank()[pri:3, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:31 IST" name="validate_Password_Field_Blank" description="Verify that validation message appears, when &#039;Password&#039; field is left blank" finished-at="2023-05-09T12:58:31 IST" duration-ms="29" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- userName_Field_Blank -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754440" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754442" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754443" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="password_Field_Blank()[pri:5, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="password_Field_Blank" description="Verify that validation message appears, when &#039;Password&#039; field is left blank" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}]]>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:64)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:59)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:218)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:51)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at base.BasePage.sendKeys(BasePage.java:65)
-at pageObjects.Login.enterUserName(Login.java:21)
-at testClasses.LoginTest.validate_Password_Field_Blank(LoginTest.java:40)
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
 at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -333,78 +296,44 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validate_Password_Field_Blank -->
-        <test-method signature="validate_Invalid_Username_Login()[pri:4, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:31 IST" name="validate_Invalid_Username_Login" description="Verify that validation message appears on entering invalid email address" finished-at="2023-05-09T12:58:31 IST" duration-ms="32" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- password_Field_Blank -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754446" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="invalid_Username_Login()[pri:6, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="invalid_Username_Login" description="Verify that validation message appears on entering invalid email address" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}]]>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:64)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:59)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:218)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:51)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at base.BasePage.sendKeys(BasePage.java:65)
-at pageObjects.Login.enterUserName(Login.java:21)
-at testClasses.LoginTest.validate_Invalid_Username_Login(LoginTest.java:47)
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
 at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -415,78 +344,52 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validate_Invalid_Username_Login -->
-        <test-method signature="validate_Invalid_Password_Login()[pri:5, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:31 IST" name="validate_Invalid_Password_Login" description="Verify that validation message appears on entering invalid password address" finished-at="2023-05-09T12:58:31 IST" duration-ms="97" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- invalid_Username_Login -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754447" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754450" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754452" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="invalid_Password_Login()[pri:7, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="invalid_Password_Login" description="Verify that validation message appears on entering invalid password" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}]]>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:64)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:59)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:218)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:51)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at base.BasePage.sendKeys(BasePage.java:65)
-at pageObjects.Login.enterUserName(Login.java:21)
-at testClasses.LoginTest.validate_Invalid_Password_Login(LoginTest.java:56)
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
 at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -497,78 +400,44 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validate_Invalid_Password_Login -->
-        <test-method signature="validate_show_hide_passwordLogin()[pri:6, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:31 IST" name="validate_show_hide_passwordLogin" finished-at="2023-05-09T12:58:31 IST" duration-ms="70" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- invalid_Password_Login -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754455" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="decrypted_Password()[pri:8, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="decrypted_Password" description="Verify that unmasking show password" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}]]>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'DESKTOP-BGPMGNP', ip: '192.168.1.11', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, appPackage=com.river.comics.us, deviceScreenSize=1080x2220, networkConnectionEnabled=true, statBarHeight=66, warnings={}, viewportRect={top=66, left=0, width=1080, height=2022}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, desired={app=C:\Users\Itsqe\eclipse-workspace\AppiumRiverComics\RiverComicsAPK\base.apk, platformVersion=11.0, automationName=Appium, platformName=Android, deviceName=Pixel 3a API 30}, platformVersion=11, pixelRatio=2.75, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceScreenDensity=440, deviceModel=sdk_gphone_x86, deviceApiLevel=30, deviceManufacturer=Google, platformName=LINUX}]
-Session ID: 6dba62c8-a62d-4a32-bdb3-6fdc69c7804b
-*** Element info: {Using=id, value=com.river.comics.us:id/etEmail}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:64)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:43)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:59)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:218)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:51)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at base.BasePage.sendKeys(BasePage.java:65)
-at pageObjects.Login.enterUserName(Login.java:21)
-at testClasses.LoginTest.validate_show_hide_passwordLogin(LoginTest.java:64)
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
 at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -579,13 +448,182 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validate_show_hide_passwordLogin -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:testClasses.LoginTest@20d525]" started-at="2023-05-09T12:58:31 IST" name="quit" finished-at="2023-05-09T12:58:31 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- decrypted_Password -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754456" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754458" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754460" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="encrypted_Password()[pri:9, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="encrypted_Password" description="Verify that masking show password" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- encrypted_Password -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754463" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754464" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="non_Registered_Email()[pri:10, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="non_Registered_Email" description="Verify that user try to login with non registered user" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- non_Registered_Email -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754466" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754468" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="deleted_Account_Login()[pri:11, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="deleted_Account_Login" description="Verify that user try to login with deleted account" finished-at="2023-09-01T15:19:14 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[org/openqa/selenium/internal/Require]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: org/openqa/selenium/internal/Require
+at io.appium.java_client.remote.options.BaseOptions.setCapability(BaseOptions.java:144)
+at io.appium.java_client.remote.options.CanSetCapability.amend(CanSetCapability.java:30)
+at io.appium.java_client.remote.options.BaseOptions.setPlatformName(BaseOptions.java:86)
+at io.appium.java_client.android.options.UiAutomator2Options.setCommonOptions(UiAutomator2Options.java:222)
+at io.appium.java_client.android.options.UiAutomator2Options.<init>(UiAutomator2Options.java:208)
+at utilities.DriverManager.initializeDriver(DriverManager.java:43)
+at base.BaseTest.initialize(BaseTest.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.Require
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleted_Account_Login -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754471" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:testClasses.LoginTest@6b695b06]" started-at="2023-09-01T15:19:14 IST" name="quit" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1693561754569" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->

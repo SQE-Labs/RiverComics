@@ -104,7 +104,12 @@
          <artifactId>extentreports</artifactId>
          <version>4.0.9</version>
      </dependency>
-  </dependencies>
+     <dependency>
+     	<groupId>Appium</groupId>
+     	<artifactId>Girgit</artifactId>
+     	<version>0.0.1-SNAPSHOT</version>
+     </dependency>
+ </dependencies>
 
   <build>
     <plugins>

@@ -27,10 +27,10 @@ Properties properties;
 
 @BeforeSuite
 public void initialize() throws Exception {
-   // new ServerManager().startServer();
-    extent = new ExtentReports(System.getProperty("user.dir") + "/test-report/ExtentReportResult.html", true);
-    extent.addSystemInfo("Environment", "QA");
-    extent.loadConfig(new File(System.getProperty("user.dir") + "/extent-config.xml"));
+//   // new ServerManager().startServer();
+//    extent = new ExtentReports(System.getProperty("user.dir") + "/test-report/ExtentReportResult.html", true);
+//    extent.addSystemInfo("Environment", "QA");
+//    extent.loadConfig(new File(System.getProperty("user.dir") + "/extent-config.xml"));
 
     new DriverManager().initializeDriver();
 
