@@ -3,7 +3,7 @@ package pageObjects;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class Settings {
+public class Setting{
 	
 	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[6]")
 	private MobileElement setting;
@@ -42,7 +42,6 @@ public class Settings {
 	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]")
 	private MobileElement selectHindiLanguage;
 	
-	
 	@AndroidFindBy(id = "com.river.comics.us:id/tvDeviceList")
 	private MobileElement deviceList;
 	
@@ -52,5 +51,61 @@ public class Settings {
 	@AndroidFindBy(id = "com.river.comics.us:id/tvDeleteAccount")
 	private MobileElement deleteAccount;
 	
+	
+//	public void clickSetting() {
+//		click(setting);
+//	}
+//	
+//	public void clickLanguage() {
+//		click(language);
+//	}
+//	
+//	public void enterUpdateEmail() {
+//		click(updateEmail);
+//	}
+//	
+//	public void enterNewEmail() {
+//		click(newEmail);
+//	}
+//	
+//	public void enterConfiredPassword() {
+//		click(confirmEmail);
+//	}
+//	
+//	public void enterUpdatePassword() {
+//		click(updatePassword);
+//	}
+//	
+//	public void enterCurrentPassword() {
+//		click(currentPassword);
+//	}
+//	
+//	public void enterNewPassword() {
+//		click(newPassword);
+//	}
+//	
+//	public void enterConfirmPassword() {
+//		click(confirmPassword);
+//	}
+//	
+//	public void changeEnglishLanguage() {
+//		click(selectEnglishLanguage);
+//	}
+//	
+//	public void changeHindiLanguage() {
+//		click(selectHindiLanguage);
+//	}
+//	
+//	public void clickDeviceList() {
+//		click(deviceList);
+//	}
+//	
+//	public void clickRsstorePurchase() {
+//		click(restorePurchase);
+//	}
+//	
+//	public void clickDeleteIcon() {
+//		click(deleteAccount);
+//	}
 
 }

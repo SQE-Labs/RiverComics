@@ -1,75 +1,200 @@
 package pageObjects;
 
+
+
 import org.openqa.selenium.By;
 
 import base.BasePage;
-import base.BaseTest;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
+import utilities.DriverManager;
 
-public class LoginPage extends BasePage{
-	
-	
-	
-	
-	private By userName=By.id("com.river.comics.us:id/etEmail");
-	
-	
-	private By password=By.id("com.river.comics.us:id/etPassword");
-	
-	
-	private By loginBtn=By.id("com.river.comics.us:id/btnLogin");
-	
-	private By  popUpMsg = By.id("android:id/message");
-	
-	
-	@AndroidFindBy(id = "com.android.permissioncontroller:id/permission_deny_button")
-	private By denyLocation=By.id("com.android.permissioncontroller:id/permission_deny_button");
-	
-	
-	public void enterUserName(String usernameTxt) {
-		sendKeys(userName,usernameTxt);	
-	}
-	
-	public void enterPassword(String passwordTxt) {
-		sendKeys(password,passwordTxt);	
-	}
-	
-	public void clickLogin() {
-		click(loginBtn);	
-	}
-	
-	public void denyLocationPopUp() throws InterruptedException {
-		Thread.sleep(3000);
-		click(denyLocation);	
-	}
-	
-	public String getToastMessage()
-	{
-		
-		String toastMsg = driver.findElement(By.xpath("(//android.widget.Toast)[1]")).getAttribute("name");
 
-		return toastMsg;
-	}
-	
-	public String getPopUpErrorMsg()
-	{
-		
-		//driver.findElement(By.id("android:id/button1")).click();
-		String msg=driver.findElement(popUpMsg).getText();
-		driver.findElement(By.id("android:id/button1")).click();
-		
-		return msg;
-		
-		
-	}
-	public void switchToFrame()
-	{
-		driver.switchTo().frame(0);
-	}
-	
-	
-	
-	
+public class LoginPage extends BasePage {
 
+    String RESULT_MSG = "Successfully added new penalty.";
+
+    private final By userName = By.id("com.river.comics.us:id/etEmail");
+
+    private By password = By.id("com.river.comics.us:id/etPassword");
+
+    private By loginBtn = By.id("com.river.comics.us:id/btnLogin");
+
+    private By toolBar = By.id("com.river.comics.us:id/ivToolbarLogo");
+
+    private By validationMessage = By.id("android:id/message");
+
+    private By deleted_UserMessage = By.id("android:id/message");
+
+    private By showPassword = By.id("com.river.comics.us:id/text_input_end_icon");
+
+    private By forgotPassword = By.id("com.river.comics.us:id/tvForgotPassword");
+
+    private By email = By.id("com.river.comics.us:id/etEmail");
+
+    private By submitButton = By.id("com.river.comics.us:id/btnSubmit");
+
+    private By okayButton = By.id("android:id/button1");
+
+    private By validate_LoginButton = By.id("com.river.comics.us:id/btnLogin");
+
+    private By enterEmail = By.id("com.river.comics.us:id/etEmail");
+
+    private By validateToast = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By invalidToastMessage = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By userNotFoundToastMSG = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By pleaseCheckYourEmail = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView");
+
+    private By userblankToastMsg = By.xpath("/hierarchy/android.widget.Toast");
+
+    private By passblankToastMsg = By.xpath("/hierarchy/android.widget.Toast");
+
+
+    public void enterUserName(String usernameTxt) throws InterruptedException {
+        sendKeys(userName, usernameTxt);
+        Thread.sleep(1000);
+    }
+
+    public void enterForgetEmail(String emailTxt) throws InterruptedException {
+        sendKeys(enterEmail, emailTxt);
+        Thread.sleep(2000);
+    }
+
+    public void enterPassword(String passwordTxt) throws InterruptedException {
+        sendKeys(password, passwordTxt);
+        Thread.sleep(1000);
+    }
+
+    public void clickLogin() throws InterruptedException {
+        click(loginBtn);
+        Thread.sleep(2000);
+    }
+
+    public void clickOkayPopup() throws InterruptedException {
+        click(okayButton);
+    }
+
+    public void validate_Login(String userNameTxt, String passWordTxt) throws Exception {
+        Thread.sleep(2000);
+        enterUserName(userNameTxt);
+        enterPassword(passWordTxt);
+        clickLogin();
+        Thread.sleep(3000);
+        acceptAlert();
+        Thread.sleep(2000);
+    }
+
+    public boolean isSubmitButtonPresent() throws InterruptedException {
+        Thread.sleep(5000);
+        return isElementPresent(submitButton);
+    }
+
+
+    public boolean isLoginButtonPresent() throws InterruptedException {
+        Thread.sleep(4000);
+        return isElementPresent(validate_LoginButton);
+    }
+
+    public boolean validate_SumitButton() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(submitButton);
+    }
+
+    public void closeAppLaunchApp() {
+        DriverManager.getDriver().closeApp();
+        DriverManager.getDriver().launchApp();
+    }
+
+    public void closeApp() throws InterruptedException {
+        DriverManager.getDriver().closeApp();
+    }
+
+    public void launchApp() throws InterruptedException {
+        DriverManager.getDriver().launchApp();
+    }
+
+    public boolean validate_NoUser() throws InterruptedException {
+        Thread.sleep(2000);
+        return isElementPresent(validate_LoginButton);
+    }
+
+    public void clickForgotPassword() throws InterruptedException {
+        click(forgotPassword);
+        Thread.sleep(2000);
+    }
+
+    public void clickSubmitButton() throws InterruptedException {
+        click(submitButton);
+        Thread.sleep(2000);
+    }
+
+    public void enterEmail(String emailText) throws InterruptedException {
+        sendKeys(email, emailText);
+        Thread.sleep(2000);
+    }
+
+    public void clickShowPassword() throws InterruptedException {
+        click(showPassword);
+        Thread.sleep(2000);
+    }
+
+    public String getDeletedAccount() {
+        return getText(deleted_UserMessage);
+    }
+
+    public String getValidationMessage() {
+        return getText(validationMessage);
+    }
+
+    public String getUserBlank_ValidationMessage() {
+        return getText(userblankToastMsg);
+    }
+
+    public String getPassBlank_ValidationMessage() {
+        return getText(passblankToastMsg);
+    }
+
+    public String getToastMessage() {
+        return getText(validateToast);
+    }
+
+    public String getinvalidToastMessage() {
+        return getText(invalidToastMessage);
+    }
+
+    public String getUserNotFoundToastMSG() {
+        return getText(userNotFoundToastMSG);
+    }
+
+    public String getValidationPWD() {
+        return getText(password);
+    }
+
+    public String getPleaseCheckYourEmail() {
+        return getText(pleaseCheckYourEmail);
+    }
+
+
+    public void LoginUser() throws Exception {
+        LoginPage login = new LoginPage();
+        Hamburger hamburger = new Hamburger();
+        Thread.sleep(2000);
+        login.enterUserName("anuragrana12123@gmail.com");
+        login.enterPassword("123456");
+        login.clickLogin();
+        login.acceptAlert();
+        Thread.sleep(1000);
+    }
+
+    public void subscriberUserLogin() throws Exception {
+    	LoginPage login = new LoginPage();
+        Hamburger hamburger = new Hamburger();
+        Thread.sleep(4000);
+        login.enterUserName("clover@yopmail.com");
+        login.enterPassword("123456");
+        login.clickLogin();
+        login.acceptAlert();
+        Thread.sleep(3000);
+    }
 }

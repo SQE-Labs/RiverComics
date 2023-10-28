@@ -1,5 +1,5 @@
 package pageObjects;
 
-public class Readpage {
+public class ReadPage {
 
 }

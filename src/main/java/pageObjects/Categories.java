@@ -2,6 +2,7 @@ package pageObjects;
 
 import base.BasePage;
 
-public class Favourites extends BasePage {
+public class Categories extends BasePage {
+
 
 }

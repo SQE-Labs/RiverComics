@@ -1,42 +1,41 @@
 package testClass;
 
+
+
 import org.testng.annotations.Test;
 
-import base.BaseTest;
-import pageObjects.Homepage;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
 import pageObjects.SeriesDetail;
 import pageObjects.VideoPlay;
 
-public class SubscribedUserTest extends BaseTest {
-//	Homepage homepg = new Homepage();
-//	SeriesDetail seriesdtl = new SeriesDetail();
-//	VideoPlay videoply = new VideoPlay();
-//	
-//	@Test
-//
-//	
-//	public void selectSeries() {
-//		
-//		homepg.select_Series();
-//		//Assert 
-//		
-//	}
-//	@Test
-//	public void verifyFavouriteIcon() {
-//		
-//		homepg.select_Series();
-//		//assert
-//		
-//	}
-//	
-//	public void validateFlow2() {
-//		seriesdtl.clickPlayBtn();
-//		videoply.clickPlaySeries();
-//		videoply.clickForwardVideo();
-//		videoply.clickRewindVideo();
-//		videoply.clickMute();
-//		videoply.clickLanguage();
-//		videoply.clickBackArrow();
-//		
-//	}
+public class SubscribedUserTest {
+
+    @Test(priority = 8, enabled = true, description = "")
+    public void subscribedUser() throws Exception {
+
+        HomePage homepage = new HomePage();
+        SeriesDetail seriesDtl = new SeriesDetail();
+        VideoPlay videoPly = new VideoPlay();
+        LoginPage login = new LoginPage();
+
+        login.validate_Login("clover@yopmail.com", "123456");
+
+        homepage.selectSeries();
+        seriesDtl.clickFavouriteIcon();
+        seriesDtl.clickRatingIcon();
+      //  seriesDtl.closeRating();
+        //seriesDtl.clickShareIcon();
+        //seriesDtl.clickShareIcon();
+        seriesDtl.clickSortingIcon();
+        seriesDtl.selectSortByDate();
+        seriesDtl.clickPlay();
+        videoPly.clickGotIt();
+      //  videoPly.clickOnVideoScreen();
+        videoPly.clickForwardVideo();
+        videoPly.clickPauseSeries();
+        videoPly.clickRewindVideo();
+        videoPly.clickMute();
+        videoPly.clickLanguage();
+    }
 }
